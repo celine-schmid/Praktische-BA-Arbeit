@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1">
+    <title>Praktische BA-Arbeit</title>
+    <!-- bootstrap css -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <!-- Bootstrap Icons-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
+    <!-- stylesheet which overrides bootstrap -->
+    <link rel="stylesheet" href="assets/styles/style.css">
+    <script src="assets/javascript/script-2.js"></script>
+</head>
+
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="nav_oben d-flex flex-row justify-content-between">
+                <div class="d-flex align-items-center" id="navbar">
+                    <h1>Praktische BA-Arbeit – Prozessdokumentation</h1>
+                </div>
+                <div class="">
+                    <button class="btn" id="about" onclick="myFunction();ShowHideAboutBtn();ShowHideButtons()">Exposé</button>
+                    <button class="btn" id="back" onclick="myFunction();"><a href="index.html">Zurück</a></button>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <div id="myBtnContainer" class="sticky">
+        <hr id="nav_hr">
+        <button class="btn active" id="showall" onclick="filterSelection('all'); fillButton1()"> Alles</button>
+        <script>
+            document.addEventListener("DOMContentLoaded", function(event) {
+                document.getElementById("showall").click();
+            });
+        </script>
+        <button class="btn farbe-2-rahmen-btn" id="button-2" onclick="filterSelection('besprechung'); fillButton2()"> Besprechung</button>
+        <button class="btn farbe-3-rahmen-btn" id="button-3" onclick="filterSelection('experimente'); fillButton3()"> Experimente</button>
+        <button class="btn farbe-4-rahmen-btn" id="button-4" onclick="filterSelection('inspiration'); fillButton4()"> Inspiration</button>
+        <button class="btn farbe-5-rahmen-btn" id="button-5" onclick="filterSelection('recherche') ; fillButton5()"> Recherche</button>
+        <button class="btn farbe-6-rahmen-btn" id="button-6" onclick="filterSelection('gedanken'); fillButton6()"> Gedanken & Fragen</button>
+        <hr id="nav_hr">
+    </div>
+
+
+    <div class="container-fluid ">
+        <div class="grid" data-masonry='{ "itemSelector": ".grid-item" }'>
+
+            <div class="grid-item filterDiv besprechung">
+                <div class="textbox farbe-2-rahmen box-shadow-2">
+                    <div class="card text-start">
+                        <div class="card-text "><button class="btn_title farbe-2-titel" onclick="myFunction2();ShowHideAboutBtn();ShowHideButtons()">Besprechung 1 (Hanna & Martin)</button></div>
+                    </div>
+                    <div class="textbox-invisible ">
+                        <h6 class="card-title-2">20.03.24</h6>
+                        <ul class="card-text">
+                            <li>Die Simulation der Natur (z. B. durch Turing Patterns) ist für mich als Gestaltende nicht so spannend, da die Algorithmen schon gegeben sind.<br> </li>
+                            <li>Untersuchung/Archiv/«Setzkasten» von gestalterischen Möglichkeiten (nicht konkrete Anwendung wie z. B. ein Plakat) wäre für mich spannender.<br> </li>
+                            <li>Exploration der neuen (ästhetischen) Möglichkeiten welche Creative Coding für das Grafikdesign bietet<br> </li>
+                            <li>Creative Coding in Verbindung mit einem Element aus der Grafik, z. B. Typografie beziehungsweise Type-Design<br> </li>
+                            <li>Explorationsfelder angelehnt an die Natur; z. B. Goldener Schnitt, Fibonacci-Folge, etc.<br> </li>
+                            <li>Wie kann es attraktiv an der Werkschau präsentiert werden? &#10132 Webseite weniger gut für die Ausstellung geeignet, zudem müsste viel Zeit fürs UI-Design aufgewendet werden. Vielleicht könnte man einen Screen verwenden, der Buchstaben durch Input vom Werkschau-Besuchenden beeinflusst (z. B. durch die Bewegung der Augen). Ausserdem könnte begleitend eine gedruckte Publikation/Broschüre vorliegen, welche einen Überblick über das erarbeitete Archiv bietet.<br> </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="grid-item filterDiv gedanken">
+                <div class="textbox farbe-2-rahmen box-shadow-6">
+                    <div class="card text-start">
+                        <div class="card-text "><button class="btn_title farbe-6-titel" onclick="myFunction2();ShowHideAboutBtn();ShowHideButtons()">Gedanken ordnen</button>
+                        </div>
+                    </div>
+                    <!-- <div class="img-container"><img src="assets/images/NHM-UK_L_994081002081_001_M_1.jpg"></div> -->
+                    <div class="textbox-invisible ">
+                        <h6 class="card-title-6">25.03.24</h6>
+                        <ul class="card-text">
+                            <li>Wie sind Buchstaben auf dem Computer gespeichert? &#10132 Wie kann auf die Buchstaben-Formen zugegriffen werden?<br> </li>
+                            <li>Welche neuen (ästhetischen) Möglichkeiten ergeben sich durch die Programmierung? &#10132 Animation, Interaktion, neues Mass an Komplexität, etc.<br></li>
+                            <li>Welche technologischen Möglichkeiten gibt es im Schrift-Design? &#10132 Variable Fonts, Color Fonts (COLORv1), Scripting etc.<br></li>
+                            <li>Wie können die ästhetischen Möglichkeiten der Programmierung auf die Körperlichkeit der Buchstaben angewendet werden?<br></li>
+                            <li>Was wären aus der Sicht der Grafikdesigner:innen attraktive neue Möglichkeiten im Bereich der Schrift?<br></li>
+                        </ul>
+                        <!-- <a href="https://www.flickr.com/photos/biodivlibrary/albums/">
+                            <button class="text-box-button">Archiv</button>
+                        </a> -->
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid-item filterDiv experimente">
+                <div class="textbox  box-shadow-3">
+                    <div class="card text-start">
+                        <div class="card-text "><button class="btn_title farbe-3-titel" onclick="myFunction2();ShowHideAboutBtn();ShowHideButtons()">Coding Grundlagen – Experiment 01</button>
+                        </div>
+                    </div>
+                     <div class="img-container"><img src="assets/images/mySVG_53.png"></div>
+                    <div class="textbox-invisible ">
+                        <h6 class="card-title-3">25.03.24</h6>
+                        <ul class="card-text">
+                            <li>Zeit und Raum; «Raumstaben»<br> </li>
+                            <li>Wie kann ich den Canvas-Inhalt als SVG speichern?<br> </li>
+                            <li>Wie kann der Zufall eingebunden werden?<br> </li>
+                        </ul>
+                        <a href="experiment-01.html">
+                            <button class="text-box-button">Experiment ansehen</button>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="grid-item filterDiv experimente">
+                <div class="textbox  box-shadow-3">
+                    <div class="card text-start">
+                        <div class="card-text "><button class="btn_title farbe-3-titel" onclick="myFunction2();ShowHideAboutBtn();ShowHideButtons()">Opentype – Experiment 02</button>
+                        </div>
+                    </div>
+                     <div class="img-container"><img src="assets/images/experiment-2-5.png"></div>
+                    <div class="textbox-invisible ">
+                        <h6 class="card-title-3">26.03.24</h6>
+                        <ul class="card-text">
+                            <li>Wie kann die Konturlinie einer Schrift durch Coding beeinflusst werden?<br> </li>
+                            <li>Formen auf der Konturlinie zeichnen (und transformieren)<br> </li>
+                        </ul>
+                        <a href="experiment-02.html">
+                            <button class="text-box-button">Experiment ansehen</button>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+            
+            <div class="grid-item filterDiv experimente">
+                <div class="textbox  box-shadow-3">
+                    <div class="card text-start">
+                        <div class="card-text "><button class="btn_title farbe-3-titel" onclick="myFunction2();ShowHideAboutBtn();ShowHideButtons()">Opentype – Experiment 03</button>
+                        </div>
+                    </div>
+                     <div class="img-container"><img src="assets/images/experiment3-11.png"></div>
+                    <div class="textbox-invisible ">
+                        <h6 class="card-title-3">26.03.24</h6>
+                        <ul class="card-text">
+                            <li>Wie kann die Konturlinie einer Schrift durch Coding beeinflusst werden?<br> </li>
+                            <li>SVG-Formen auf der Konturlinie platzieren<br> </li>
+                        </ul>
+                        <a href="experiment-03.html">
+                            <button class="text-box-button">Experiment ansehen</button>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="grid-item filterDiv experimente">
+                <div class="textbox  box-shadow-3">
+                    <div class="card text-start">
+                        <div class="card-text "><button class="btn_title farbe-3-titel" onclick="myFunction2();ShowHideAboutBtn();ShowHideButtons()">Opentype – Experiment 04</button>
+                        </div>
+                    </div>
+                    <div class="img-container"><img src="assets/images/experiment4-26.2.png"></div>
+                    <div class="textbox-invisible ">
+                        <h6 class="card-title-3">26.03.24</h6>
+                        <ul class="card-text">
+                            <li>Wie kann die Konturlinie einer Schrift durch Coding beeinflusst werden?<br> </li>
+                            <li>Kann anstelle einer SVG-Form auch ein PNG auf der Schriftkontur platziert werden?<br> </li>
+                        </ul>
+                        <a href="experiment-04.html">
+                            <button class="text-box-button">Experiment ansehen</button>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="grid-item filterDiv gedanken">
+                <div class="textbox farbe-2-rahmen box-shadow-6">
+                    <div class="card text-start">
+                        <div class="card-text "><button class="btn_title farbe-6-titel" onclick="myFunction2();ShowHideAboutBtn();ShowHideButtons()">Type Specimen</button>
+                        </div>
+                    </div>
+                    <!-- <div class="img-container"><img src="assets/images/NHM-UK_L_994081002081_001_M_1.jpg"></div> -->
+                    <div class="textbox-invisible ">
+                        <h6 class="card-title-6">27.03.24</h6>
+                        <ul class="card-text">
+                            <li>Der Begriffe «Type Specimen» wird sowohl im Schriftdesign als auch in der Biologie vewendet.<br> </li>
+                            <li>In der Biologie wird noch zwischen einigen <a href= "https://www.amnh.org/explore/news-blogs/from-the-collections-posts/just-our-types-a-short-guide-to-type-specimens">Begriffen</a> unterschieden: Holotype, Syntype, Lectotype, Paratype, Allotype und Ergatotype.<br> </li>
+                          <li><a href="https://www.merriam-webster.com/dictionary/type%20specimen">Definition aus der Biologie:</a> ein Exemplar oder Individuum, das als Typ einer Art oder einer kleineren Gruppe bezeichnet wird und als endgültiges Kriterium für die Merkmale dieser Gruppe dient.<br></li>
+                          <li><a href="https://typography.guru/term/type-specimen-r112/">Definition aus der Schriftgestaltung:</a> die Präsentation einer bestimmten Schriftart, um ihr Design und/oder ihre Verwendung zu zeigen.<br></li>
+                        </ul>
+                        <!-- <a href="https://www.flickr.com/photos/biodivlibrary/albums/">
+                            <button class="text-box-button">Archiv</button>
+                        </a> -->
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid-item filterDiv experimente">
+                <div class="textbox  box-shadow-3">
+                    <div class="card text-start">
+                        <div class="card-text "><button class="btn_title farbe-3-titel" onclick="myFunction2();ShowHideAboutBtn();ShowHideButtons()">Opentype – Experiment 05</button>
+                        </div>
+                    </div>
+                     <div class="img-container"><img src="assets/images/titelbilder/experiment-05.png"></div>
+                    <div class="textbox-invisible ">
+                        <h6 class="card-title-3">27.03.24</h6>
+                        <ul class="card-text">
+                            <li>Wie kann durch die steuerbaren Grundelemente (Punkte auf dem Schriftpfad) Variation in der Ausprägung der Schrift generiert werden?<br> </li>
+                            <li>Arbeit mit den Bézier-Kurven, welche die Punkte auf dem Schriftpfad verbinden.<br> </li>
+                        </ul>
+                        <a href="experiment-05.html">
+                            <button class="text-box-button">Experiment ansehen</button>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="grid-item filterDiv experimente">
+                <div class="textbox  box-shadow-3">
+                    <div class="card text-start">
+                        <div class="card-text "><button class="btn_title farbe-3-titel" onclick="myFunction2();ShowHideAboutBtn();ShowHideButtons()">Coding Grundlagen – Experiment 06</button>
+                        </div>
+                    </div>
+                     <div class="img-container"><img src="assets/images/titelbilder/experiment-06.png"></div>
+                    <div class="textbox-invisible ">
+                        <h6 class="card-title-3">27.03.24</h6>
+                        <ul class="card-text">
+                            <li>Wie kann durch die steuerbaren Grundelemente (Punkte auf dem Schriftpfad) Variation in der Ausprägung der Schrift generiert werden?<br> </li>
+                            <li>Arbeit mit den Bézier-Kurven, welche die Punkte auf dem Schriftpfad verbinden<br> </li>
+                            <li>Die Punkte des Konturpfades verselbständigen sich, bleiben aber mit den Nachbarspunkten verbunden. Im Laufe der Zeit wird der Buchstabe unlesbar und zu etwas neuem.<br> </li>
+                        </ul>
+                        <a href="experiment-06.html">
+                            <button class="text-box-button">Experiment ansehen</button>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="grid-item filterDiv experimente">
+                <div class="textbox  box-shadow-3">
+                    <div class="card text-start">
+                        <div class="card-text "><button class="btn_title farbe-3-titel" onclick="myFunction2();ShowHideAboutBtn();ShowHideButtons()">Coding Grundlagen – Experiment 07</button>
+                        </div>
+                    </div>
+                     <div class="img-container"><img src="assets/images/gifs/experiment-07_2.gif"></div>
+                    <div class="textbox-invisible ">
+                        <h6 class="card-title-3">27.03.24</h6>
+                        <ul class="card-text">
+                            <li>Wie kann durch die steuerbaren Grundelemente (Punkte auf dem Schriftpfad) Variation in der Ausprägung der Schrift generiert werden?<br> </li>
+                            <li>Auf den von der Schriftkontur abweichenden Bézierkurven werden PNGs platziert<br> </li>
+                            <li>Die PNGs des Konturpfades bewegen sich. Es wird mit der Lesbarkeit gespielt.<br> </li>
+                        </ul>
+                        <a href="experiment-07.html">
+                            <button class="text-box-button">Experiment ansehen</button>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="grid-item filterDiv experimente">
+                <div class="textbox  box-shadow-3">
+                    <div class="card text-start">
+                        <div class="card-text "><button class="btn_title farbe-3-titel" onclick="myFunction2();ShowHideAboutBtn();ShowHideButtons()">PoseNet Classification – Experiment 08</button>
+                        </div>
+                    </div>
+                    <div class="img-container"><img src="assets/images/experiment-08-standbild.png"></div>
+                    <div class="textbox-invisible ">
+                        <h6 class="card-title-3">28.03.24</h6>
+                        <ul class="card-text">
+                            <li>PoseNet Machine Learning Model (ml5.js)<br> </li>
+                            <li>Bild als Input, Array von Koordinaten als Output<br> </li>
+                            <li>«Skelett» aus 17 Punkten (Body Tracking in Echtzeit)<br> </li>
+                            <li>Der Webcam-Input kann genutzt werden, um zu erkennen, welche Pose der Benutzende einnimmt.<br> </li>
+                        </ul>
+                        <a href="experiment-08.html">
+                            <button class="text-box-button">Experiment ansehen</button>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="grid-item filterDiv experimente">
+                <div class="textbox  box-shadow-3">
+                    <div class="card text-start">
+                        <div class="card-text "><button class="btn_title farbe-3-titel" onclick="myFunction2();ShowHideAboutBtn();ShowHideButtons()">PoseNet Classification – Experiment 09A</button>
+                        </div>
+                    </div>
+                    <div class="img-container"><img src="assets/images/experiment-09-02-standbild.png"></div>
+                    <div class="textbox-invisible ">
+                        <h6 class="card-title-3">28.03.24</h6>
+                        <ul class="card-text">
+                            <li>Posen klassifizieren mit PoseNet und ml5.neuralNetwork()<br> </li>
+                            <li>«YMCA» Posen trainieren<br> </li>
+                       
+                        </ul>
+                        <a href="experiment-09.html">
+                            <button class="text-box-button">Experiment ansehen</button>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- <div class="grid-item filterDiv experimente">
+                <div class="textbox  box-shadow-3">
+                    <div class="card text-start">
+                        <div class="card-text "><button class="btn_title farbe-3-titel" onclick="myFunction2();ShowHideAboutBtn();ShowHideButtons()">Coding Grundlagen – Experiment 09.02</button>
+                        </div>
+                    </div>
+                     <div class="img-container">      <video autoplay loop muted>
+                        <source src="assets/images/videos/experiment-09-02.mov" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video></div>
+                    <div class="textbox-invisible ">
+                        <h6 class="card-title-3">28.03.24</h6>
+                        <ul class="card-text">
+                            <li>Posen klassifizieren mit PoseNet und ml5.neuralNetwork()<br> </li>
+                            <li>«YMCA» Posen erkennen<br> </li>
+                       
+                        </ul>
+                        <a href="experiment-09_2.html">
+                            <button class="text-box-button">Experiment ansehen</button>
+                        </a>
+                    </div>
+                </div>
+
+            </div> -->
+
+            <div class="grid-item filterDiv experimente">
+                <div class="textbox  box-shadow-3">
+                    <div class="card text-start">
+                        <div class="card-text "><button class="btn_title farbe-3-titel" onclick="myFunction2();ShowHideAboutBtn();ShowHideButtons()">PoseNet Classification – Experiment 09B</button>
+                        </div>
+                    </div>
+                    <div class="img-container"><img src="assets/images/experiment-09-03-standbild.png"></div>
+                    <div class="textbox-invisible ">
+                        <h6 class="card-title-3">28.03.24</h6>
+                        <ul class="card-text">
+                            <li>Posen klassifizieren mit PoseNet und ml5.neuralNetwork()<br> </li>
+                            <li>«YMCA» Posen erkennen<br> </li>
+                            <li>Die Pose für das M und C sind zu ähnlich, weshalb es zu Verwechslungen bei der Erkennung kommt.<br> </li>
+                       
+                        </ul>
+                        <!-- <a href="experiment-09_3.html">
+                            <button class="text-box-button">Experiment ansehen</button>
+                        </a> -->
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="grid-item filterDiv experimente">
+                <div class="textbox  box-shadow-3">
+                    <div class="card text-start">
+                        <div class="card-text "><button class="btn_title farbe-3-titel" onclick="myFunction2();ShowHideAboutBtn();ShowHideButtons()">PoseNet Regression – Experiment 10A</button>
+                        </div>
+                    </div>
+                    <div class="img-container"><img src="assets/images/experiment-10-standbild.png"></div>
+                    <div class="textbox-invisible ">
+                        <h6 class="card-title-3">28.03.24</h6>
+                        <ul class="card-text">
+                            <li>Regression mit PoseNet und ml5.neuralNetwork()<br> </li>
+                            <li>Durch die Bewegung des Körpers Slider steuern.<br> </li>
+                            <li>Pose und Sliderposition trainieren<br> </li>
+                       
+                        </ul>
+                        <a href="experiment-10.html">
+                            <button class="text-box-button">Experiment ansehen</button>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="grid-item filterDiv experimente">
+                <div class="textbox  box-shadow-3">
+                    <div class="card text-start">
+                        <div class="card-text "><button class="btn_title farbe-3-titel" onclick="myFunction2();ShowHideAboutBtn();ShowHideButtons()">PoseNet Regression – Experiment 10B</button>
+                        </div>
+                    </div>
+                    <!-- <div class="img-container">      <video autoplay loop muted>
+                        <source src="assets/images/videos/experiment-10.mov" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video></div> -->
+                    <div class="textbox-invisible ">
+                        <h6 class="card-title-3">28.03.24</h6>
+                        <ul class="card-text">
+                            <li>Regression mit PoseNet und ml5.neuralNetwork()<br> </li>
+                            <li>Durch die Bewegung des Körpers Slider steuern.<br> </li>
+                            <li>Pose und Sliderposition testen<br> </li>
+                            <li>Es kommt manchmal zur Erkennung der Pose und zur Anpassung der Slider, aber das Ganze ist sehr unzuverlässig. Das Modell müsste besser trainiert werden.<br> </li>
+                       
+                        </ul>
+                        <a href="experiment-10.html">
+                            <button class="text-box-button">Experiment ansehen</button>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="grid-item filterDiv experimente">
+                <div class="textbox  box-shadow-3">
+                    <div class="card text-start">
+                        <div class="card-text "><button class="btn_title farbe-3-titel" onclick="myFunction2();ShowHideAboutBtn();ShowHideButtons()">Pixelwerte – Experiment 11A</button>
+                        </div>
+                    </div>
+                    <div class="img-container"><img src="assets/images/experiment-11A.png"></div>
+                    <div class="textbox-invisible ">
+                        <h6 class="card-title-3">29.03.24</h6>
+                        <ul class="card-text">
+                            <li>Die kleinsten Bildelemente, die Pixel, dienen als Ausgangspunkt.<br> </li>
+                            <li>Die Pixelwerte modulieren Gestaltungsparameter wie Linenstärke, Rotation,  Breite, Höhe oder Fläche.<br> </li>
+                            <li>Die RGB-Werte weden dafür erst in einen Grauwert umgerechnet.<br> </li>
+
+                       
+                        </ul>
+                        <a href="experiment-11A.html">
+                            <button class="text-box-button">Experiment ansehen</button>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="grid-item filterDiv experimente">
+                <div class="textbox  box-shadow-3">
+                    <div class="card text-start">
+                        <div class="card-text "><button class="btn_title farbe-3-titel" onclick="myFunction2();ShowHideAboutBtn();ShowHideButtons()">Pixelwerte – Experiment 11B</button>
+                        </div>
+                    </div>
+                    <div class="img-container"><img src="assets/images/experiment-11B.png"></div>
+                    <div class="textbox-invisible ">
+                        <h6 class="card-title-3">29.03.24</h6>
+                        <ul class="card-text">
+                            <li>Die kleinsten Bildelemente, die Pixel, dienen als Ausgangspunkt.<br> </li>
+                            <li>Die Pixelwerte modulieren Gestaltungsparameter wie Linenstärke, Rotation,  Breite, Höhe oder Fläche.<br> </li>
+                            <li>Die RGB-Werte weden dafür erst in einen Grauwert umgerechnet.<br> </li>
+
+                       
+                        </ul>
+                        <a href="experiment-11B.html">
+                            <button class="text-box-button">Experiment ansehen</button>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- <div class="grid-item filterDiv inspiration">
+                <div class="textbox farbe-2-rahmen box-shadow-4">
+                    <div class="card text-start">
+                        <div class="card-text "><button class="btn_title farbe-4-titel" onclick="myFunction2();ShowHideAboutBtn();ShowHideButtons()">Inspiration</button>
+                        </div>
+                    </div>
+                    <img src="assets/images/eth-ausstellung.jpg">
+                    <div class="textbox-invisible farbe-4-rahmen">
+                        <h6 class="card-title-4">25.03.244</h6>
+                        <p class="card-text">x</p>
+
+                        <a href="ausstellung-eth.html">
+                            <button class="text-box-button">Bilder und Ausstellungstext</button>
+                        </a>
+                        <a href="https://extract.ethz.ch/">
+                            <button class="text-box-button">Website</button>
+                        </a>
+                    </div>
+                </div>
+
+            </div> -->
+            <!-- <div class="grid-item filterDiv recherche">
+                <div class="textbox  box-shadow-5">
+                    <div class="card text-start">
+                        <div class="card-text "><button class="btn_title farbe-5-titel" onclick="myFunction2();ShowHideAboutBtn();ShowHideButtons()">Recherche</button>
+                        </div>
+                    </div>
+                    <div class="textbox-invisible ">
+                        <h6 class="card-title-5">Notizen</h6>
+                        <ul class="card-text">
+                            <li>x<br> </li>
+                        </ul>
+                        <a href="https://swisscovery.slsp.ch/permalink/41SLSP_RZS/12sk50e/alma9912152400105505">
+                            <button class="text-box-button">Swisscovery</button>
+                        </a>
+                    </div>
+                </div>
+
+            </div> -->
+
+
+    
+
+        <footer>
+            <div id="footer_text">
+
+                <button class="btn scroll_top"><a href="#top">
+                Top
+            </a></button>
+            </div>
+
+        </footer>
+
+        <!-- javascript -->
+        <!-- alte position -->
+       
+        <!-- bootstrap javascript -->
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+
+        <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
+</body>
+
+</html>
