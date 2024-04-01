@@ -17,33 +17,11 @@
     <meta http-equiv="Pragma" content="no-cache">
     <meta http-equiv="Expires" content="0">
 
-   
+     <script src="https://cdn.jsdelivr.net/npm/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
+
 </head>
 
 <body>
-    <script src="https://cdn.jsdelivr.net/npm/masonry-layout@4/dist/masonry.pkgd.min.js" defer></script>
-    <script>
-        // Function to reload the page while maintaining scroll position
-        function reloadPage() {
-            // Store the current scroll position in session storage
-            sessionStorage.setItem('scrollPosition', window.scrollY);
-            // Reload the page
-            location.reload();
-        }
-    
-        // Check if the session storage item 'reloaded' is present
-        if (!sessionStorage.getItem('reloaded')) {
-            // If not, set the item and reload the page
-            sessionStorage.setItem('reloaded', 'true');
-            reloadPage();
-        } else {
-            // If 'reloaded' item is present, restore the scroll position
-            const scrollPosition = sessionStorage.getItem('scrollPosition');
-            if (scrollPosition !== null) {
-                window.scrollTo(0, scrollPosition);
-            }
-        }
-    </script>
     <header>
         <nav class="navbar">
             <div class="nav_oben d-flex flex-row justify-content-between">
@@ -562,7 +540,28 @@
             }
         </script> -->
 
-    
+        <script>
+            // Function to reload the page while maintaining scroll position
+            function reloadPage() {
+                // Store the current scroll position in session storage
+                sessionStorage.setItem('scrollPosition', window.scrollY);
+                // Reload the page
+                location.reload();
+            }
+        
+            // Check if the session storage item 'reloaded' is present
+            if (!sessionStorage.getItem('reloaded')) {
+                // If not, set the item and reload the page
+                sessionStorage.setItem('reloaded', 'true');
+                reloadPage();
+            } else {
+                // If 'reloaded' item is present, restore the scroll position
+                const scrollPosition = sessionStorage.getItem('scrollPosition');
+                if (scrollPosition !== null) {
+                    window.scrollTo(0, scrollPosition);
+                }
+            }
+        </script>
         
       
 </body>
