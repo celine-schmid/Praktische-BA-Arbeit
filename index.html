@@ -516,13 +516,14 @@
 
         <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js" defer></script>
         <script>
-            // Check if the session cookie 'reloaded' is present
-            if (!document.cookie.includes('reloaded=true')) {
-                // If not, set the cookie and reload the page
-                document.cookie = 'reloaded=true; path=/';
+            // Check if the session storage item 'reloaded' is present
+            if (!sessionStorage.getItem('reloaded')) {
+                // If not, set the item and reload the page
+                sessionStorage.setItem('reloaded', 'true');
                 location.reload();
             }
         </script>
+        
         
         
        
