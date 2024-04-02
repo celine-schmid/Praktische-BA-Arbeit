@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+  <meta charset="utf-8" />
+  <title>Resize letter</title>
+
+  <!-- p5.js -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.8.0/p5.js"></script>
+
+  <!-- import mediapipe object and make it available globally -->
+  <script type="module">
+    import { mediaPipe } from "/assets/scripts/mediaPipe.js";
+
+    // we can use
+    // mediaPipe.predictWebcam() <- pass this your video
+    // mediaPipe.handednesses <- right/left handedness
+    // mediaPipe.landmarks <- 3d landmarks
+    // mediaPipe.worldLandmarks <- 3d landmarks in world coordinates
+
+    // make mediaPipe available everywhere
+    window.mediaPipe = mediaPipe;
+  </script>
+
+  <link rel="stylesheet" type="text/css" href="/assets/styles/style-unterseite.css" />
+
+</head>
+
+<body>
+    <div id="myBtnContainer-top" class="sticky">
+        <hr id="nav_hr-top">
+        <a href="index.html">
+            <button class="btn active" id="back-main"> Zurück</button></a>
+            <button class="btn  farbe-3-titel" onclick="myFunction2();ShowHideAboutBtn();ShowHideButtons()">MediaPipe – Experiment 13B</button>
+            <!-- <a href="https://github.com/NahuelGerthVK/bodytracking-p5-mediapipe/tree/main/04_resize_letter">
+                <button class="btn  farbe-3-rahmen-btn">Ressource</button>
+            </a> -->
+
+
+        <hr id="nav_hr">
+    </div>
+  <main>
+  </main>
+
+  <!-- sketch -->
+  <script src="/assets/javascript/experiment-13B.js"></script>
+</body>
+
+</html>

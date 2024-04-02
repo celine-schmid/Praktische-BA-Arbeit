@@ -56,8 +56,8 @@ function w3AddClass(element, name) {
     var msnry = new Masonry(grid, {
         // options...
         itemSelector: '.grid-item',
-        columnWidth: 10,
-        gutterWidth: 10
+        columnWidth: 6,
+        gutterWidth: 6
     });
 
   
