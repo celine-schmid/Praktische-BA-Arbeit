@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1">
+    <title>Praktische BA-Arbeit</title>
+    <!-- bootstrap css -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <!-- Bootstrap Icons-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
+    <!-- stylesheet which overrides bootstrap -->
+    <link rel="stylesheet" href="assets/styles/style-unterseite.css">
+
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.0/p5.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.2/addons/p5.dom.min.js"></script>
+
+
+ 
+</head>
+
+<body>
+    <header>
+
+
+        <nav class="navbar">
+
+            <!-- <div class="nav_oben d-flex flex-row justify-content-between">
+                <div class="d-flex align-items-center" id="navbar">
+                    <h1>Praktische BA-Arbeit – Prozessdokumentation</h1>
+                </div> -->
+
+
+
+                <!-- <div class="">
+
+                    <button class="btn" id="about" onclick="myFunction();ShowHideAboutBtn();ShowHideButtons()">Exposé</button>
+                    <button class="btn" id="back" onclick="myFunction();"><a href="index.html">Zurück</a></button>
+     
+                </div> -->
+            </div>
+
+        </nav>
+
+
+    </header>
+    <div id="myBtnContainer-top" class="sticky">
+        <hr id="nav_hr-top">
+        <a href="index.html">
+            <button class="btn active" id="back-main"> Zurück</button></a>
+            <button class="btn  farbe-3-titel" onclick="myFunction2();ShowHideAboutBtn();ShowHideButtons()">Konzeptpapier</button>
+           
+
+
+        <hr id="nav_hr">
+    </div>
+  
+
+    <div class="container-fluid ">
+     
+        <!-- <div class="grid">        <p> <span class="card-title-3">26.03.24</span></p> -->
+
+        
+            <div class="">
+                <!-- <div class="textbox-alone  box-shadow-4">
+                   
+ 
+                    <div class="textbox-invisible-2 ">
+                     
+
+                        <div class="row  g-custom">
+                            <div class="col-sm-12 col-md-12 col-lg-9 " style="margin-top: -3px;">
+                                <div class="card" id="Div1" style="display: inline-block; margin-left: -12px;">
+                                    <div id="carousel1" class="carousel slide" data-bs-interval="false">
+                                        <div class="carousel-inner">
+
+                                            <div class="carousel-item active">
+                                                <img src="assets/images/experiment4-2.png" class="d-block w-100 " alt="... ">
+                                            </div>
+                                            <div class="carousel-item ">
+                                                <img src="assets/images/experiment4-4.png" class="d-block w-100 " alt="... ">
+                                            </div>
+                                            <div class="carousel-item ">
+                                                <img src="assets/images/experiment4-6.png" class="d-block w-100 " alt="... ">
+                                            </div>
+                                            <div class="carousel-item ">
+                                                <img src="assets/images/experiment4-8.png" class="d-block w-100 " alt="... ">
+                                            </div>
+                                            <div class="carousel-item ">
+                                                <img src="assets/images/experiment4-10.png" class="d-block w-100 " alt="... ">
+                                            </div>
+                                            <div class="carousel-item ">
+                                                <img src="assets/images/experiment4-12.png" class="d-block w-100 " alt="... ">
+                                            </div>
+                                            <div class="carousel-item ">
+                                                <img src="assets/images/experiment4-14.png" class="d-block w-100 " alt="... ">
+                                            </div>
+                                            <div class="carousel-item ">
+                                                <img src="assets/images/experiment4-16.png" class="d-block w-100 " alt="... ">
+                                            </div>
+                                            <div class="carousel-item ">
+                                                <img src="assets/images/experiment4-18.png" class="d-block w-100 " alt="... ">
+                                            </div>
+                                            <div class="carousel-item ">
+                                                <img src="assets/images/experiment4-20.png" class="d-block w-100 " alt="... ">
+                                            </div>
+                                            <div class="carousel-item ">
+                                                <img src="assets/images/experiment4-21.png" class="d-block w-100 " alt="... ">
+                                            </div>
+                                            <div class="carousel-item ">
+                                                <img src="assets/images/experiment4-23.png" class="d-block w-100 " alt="... ">
+                                            </div>
+                                            <div class="carousel-item ">
+                                                <img src="assets/images/experiment4-25.png" class="d-block w-100 " alt="... ">
+                                            </div>
+                                            <div class="carousel-item ">
+                                                <img src="assets/images/experiment4-26.png" class="d-block w-100 " alt="... ">
+                                            </div>
+                             
+                                        </div>
+
+                                        <button class="carousel-control-prev" type="button" data-bs-target="#carousel1" data-bs-slide="prev">
+                                              <span class="carousel-control-prev-icon " aria-hidden="true"></span>
+                                              <span class="visually-hidden ">Previous</span>
+                                            </button>
+                                        <button class="carousel-control-next" type="button" data-bs-target="#carousel1" data-bs-slide="next">
+                                              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                              <span class="visually-hidden">Next</span>
+                                            </button>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                        </div>
+                  
+
+                            <ul> 
+                                <li>Mit der <a href="https://opentype.js.org/">opentype.js-Bibliothek von Frederik De Bleser</a> kann die Schriftkontur durch eine Menge von Punkten errechnet werden. Das ermöglicht es, auf Schriften im Browser zuzugreiffen und diese zu modifizieren.</li>
+                          
+                                <li>Erstaunliche Resultate, wenn anstelle von Formen PNGs für die Schriftkontur verwendet werden.</li>
+                               
+                           
+                 
+                            </ul>
+                           
+                    </div>
+                </div> -->
+
+            </div>
+       
+
+      
+
+            </div>
+
+
+
+        </div>
+
+
+    </div>
+     
+    
+
+<!-- <script src="assets/javascript/experiment-12.js"></script>
+<script src="assets/javascript/experiment-12-box.js"></script> -->
+
+
+
+
+    <!-- bootstrap javascript -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+
+
+</body>
+
+</html>

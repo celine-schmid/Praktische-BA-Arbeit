@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1">
+    <title>Praktische BA-Arbeit</title>
+  
+    <!-- stylesheet which overrides bootstrap -->
+    <link rel="stylesheet" href="assets/styles/bildgalerie.css">
+
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.0/p5.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.2/addons/p5.dom.min.js"></script>
+    <script src="assets/scripts/quicksettings.js"></script>
+
+
+ 
+</head>
+
+<body >
+    <header>
+
+
+        <nav class="navbar">
+
+            <!-- <div class="nav_oben d-flex flex-row justify-content-between">
+                <div class="d-flex align-items-center" id="navbar">
+                    <h1>Praktische BA-Arbeit – Prozessdokumentation</h1>
+                </div> -->
+
+
+
+                <!-- <div class="">
+
+                    <button class="btn" id="about" onclick="myFunction();ShowHideAboutBtn();ShowHideButtons()">Exposé</button>
+                    <button class="btn" id="back" onclick="myFunction();"><a href="index.html">Zurück</a></button>
+     
+                </div> -->
+            </div>
+
+        </nav>
+
+
+    </header>
+    <div id="myBtnContainer-top" class="sticky">
+        <hr id="nav_hr-top">
+        <a href="index.html">
+            <button class="btn active" id="back-main"> Zurück</button></a>
+            <button class="btn  farbe-3-titel" onclick="myFunction2();ShowHideAboutBtn();ShowHideButtons()">Bildergalerie</button>
+           
+
+
+        <hr id="nav_hr">
+    </div>
+  
+
+   
+    
+    <div class="galerie-container">
+        <!-- <h2 class="heading-text"><span>Wie sah mein Weg zu den </span>«Noise Artifacts»<span> aus?</span></h2> -->
+        <div class="image-gallery">
+            <div class="row">
+                <div class="image-item">
+                    <img src="assets/images/experiment-02/experiment02-7.png" alt="" />
+
+                </div>
+
+                <div class="image-item">
+                    <img src="assets/images/experiment-02/experiment02-6.png" alt="" />
+
+                </div>
+                <div class="image-item">
+                    <img src="assets/images/experiment-02/experiment02-2.png" alt="" />
+
+                </div>
+
+            </div>
+            <div class="row">
+                <div class="image-item">
+                    <img src="assets/images/experiment-02/experiment02-4.png" alt="" />
+
+                </div>
+
+                <div class="image-item">
+                    <img src="assets/images/experiment-02/experiment02-5.png" alt="" />
+
+                </div>
+                <div class="image-item">
+                    <img src="assets/images/experiment-02/experiment02-3.png" alt="" />
+
+                </div>
+
+            </div>
+            <div class="row">
+                <div class="image-item">
+                    <img src="assets/images/experiment-04/experiment04-10.png" alt="" />
+
+                </div>
+
+                <div class="image-item">
+                    <img src="assets/images/experiment-04/experiment04-8.png" alt="" />
+
+                </div>
+                <div class="image-item">
+                    <img src="assets/images/experiment-04/experiment04-12.png" alt="" />
+
+                </div>
+
+            </div>
+            <div class="row">
+                <div class="image-item">
+                    <img src="assets/images/experiment-04/experiment04-14.png" alt="" />
+
+                </div>
+
+                <div class="image-item">
+                    <img src="assets/images/experiment-04/experiment04-15.png" alt="" />
+
+                </div>
+                <div class="image-item">
+                    <img src="assets/images/experiment-04/experiment04-16.png" alt="" />
+
+                </div>
+                <div class="image-item">
+                    <img src="assets/images/experiment-04/experiment04-17.png" alt="" />
+
+                </div>
+
+            </div>
+            <div class="row">
+                <div class="image-item">
+                    <img src="assets/images/experiment-04/experiment04-21.png" alt="" />
+
+                </div>
+
+                <div class="image-item">
+                    <img src="assets/images/experiment-04/experiment04-22.png" alt="" />
+
+                </div>
+                <div class="image-item">
+                    <img src="assets/images/experiment-04/experiment04-23.png" alt="" />
+
+                </div>
+                <div class="image-item">
+                    <img src="assets/images/experiment-04/experiment04-26.png" alt="" />
+
+                </div>
+                <div class="image-item">
+                    <img src="assets/images/experiment-04/experiment04-34.png" alt="" />
+
+                </div>
+
+            </div>
+            <div class="row">
+                <div class="image-item">
+                    <img src="assets/images/experiment-04/experiment04-18.png" alt="" />
+
+                </div>
+
+                <div class="image-item">
+                    <img src="assets/images/experiment-04/experiment04-19.png" alt="" />
+
+                </div>
+             
+
+            </div>
+            <div class="row">
+                <div class="image-item">
+                    <img src="assets/images/experiment-04/experiment04-31.png" alt="" />
+
+                </div>
+
+                <div class="image-item">
+                    <img src="assets/images/experiment-04/experiment04-32.png" alt="" />
+
+                </div>
+                <div class="image-item">
+                    <img src="assets/images/experiment-04/experiment04-33.png" alt="" />
+
+                </div>
+
+            </div>
+   
+            <div class="row">
+                <div class="image-item">
+                    <img src="assets/images/experiment-04/experiment04-30.png" alt="" />
+
+                </div>
+
+                <div class="image-item">
+                    <img src="assets/images/experiment-04/experiment04-28.png" alt="" />
+
+                </div>
+                <div class="image-item">
+                    <img src="assets/images/experiment-04/experiment04-29.png" alt="" />
+
+                </div>
+                <div class="image-item">
+                    <img src="assets/images/experiment-04/experiment04-27.png" alt="" />
+
+                </div>
+
+            </div>
+            <div class="row">
+                <div class="image-item">
+                    <img src="assets/images/experiment-04/experiment04-1.png" alt="" />
+
+                </div>
+
+                <div class="image-item">
+                    <img src="assets/images/experiment-04/experiment04-3.png" alt="" />
+
+                </div>
+                <div class="image-item">
+                    <img src="assets/images/experiment-04/experiment04-2.png" alt="" />
+
+                </div>
+
+            </div>
+            <div class="row">
+                <div class="image-item">
+                    <img src="assets/images/experiment-04/experiment04-4.png" alt="" />
+
+                </div>
+
+                <div class="image-item">
+                    <img src="assets/images/experiment-04/experiment04-5.png" alt="" />
+
+                </div>
+                <div class="image-item">
+                    <img src="assets/images/experiment-04/experiment04-6.png" alt="" />
+
+                </div>
+
+            </div>
+  
+      
+        
+            <!-- <div class="row">
+             
+
+                <div class="image-item">
+                    <img src="assets/prozess_aktuell/Bildschirmfoto 2023-07-05 um 10.25.04.png" alt="" />
+                    <div class="overlay"><span>Image title</span></div>
+                </div>
+                <div class="image-item">
+                    <img src="assets/prozess_aktuell/Bildschirmfoto 2023-07-05 um 10.25.14.png" alt="" />
+                    <div class="overlay"><span>Image title</span></div>
+                </div>
+            </div> -->
+            <div class="row">
+                <div class="image-item">
+                    <img src="assets/prozess_aktuell/Bildschirmfoto 2023-07-05 um 09.19.14.png" alt="" />
+
+                </div>
+
+                <div class="image-item">
+                    <img src="assets/prozess_aktuell/Bildschirmfoto 2023-07-05 um 09.19.22.png" alt="" />
+
+                </div>
+
+            </div>
+            <div class="row">
+                <div class="image-item">
+                    <img src="assets/prozess_aktuell/Bildschirmfoto 2023-07-05 um 09.36.54.png" alt="" />
+
+                </div>
+
+                <div class="image-item">
+                    <img src="assets/prozess_aktuell/Bildschirmfoto 2023-07-05 um 09.37.29.png" alt="" />
+
+                </div>
+                <div class="image-item">
+                    <img src="assets/prozess_aktuell/Bildschirmfoto 2023-07-05 um 09.38.15.png" alt="" />
+
+                </div>
+                <!-- <div class="image-item">
+                    <img src="assets/prozess_aktuell/Bildschirmfoto 2023-07-05 um 09.37.03.png" alt="" />
+                    <div class="overlay"><span>Image title</span></div>
+                </div> -->
+            </div>
+            <div class="column">
+                <div class="image-item">
+                    <img src="assets/prozess_aktuell/Bildschirmfoto 2023-07-05 um 09.37.40.png" alt="" />
+                    <!-- <div class="overlay"><span>Image title</span></div> -->
+                </div>
+
+            </div>
+            <div class="row">
+                <div class="image-item">
+                    <img src="assets/prozess_aktuell/Bildschirmfoto 2023-07-05 um 10.25.32.png" alt="" />
+
+                </div>
+
+                <div class="image-item">
+                    <img src="assets/prozess_aktuell/Bildschirmfoto 2023-07-05 um 10.25.53.png" alt="" />
+
+                </div>
+
+            </div>
+
+            <div class="row">
+                <div class="image-item">
+                    <img src="assets/prozess_aktuell/Bildschirmfoto 2023-07-05 um 09.19.51.png" alt="" />
+
+                </div>
+
+                <div class="image-item">
+                    <img src="assets/prozess_aktuell/Bildschirmfoto 2023-07-05 um 09.20.13.png" alt="" />
+
+                </div>
+                <div class="image-item">
+                    <img src="assets/prozess_aktuell/Bildschirmfoto 2023-07-05 um 09.20.39.png" alt="" />
+
+                </div>
+            </div>
+
+
+            <div class="column">
+                <div class="image-item">
+                    <img src="assets/prozess_aktuell/Bildschirmfoto 2023-07-05 um 10.19.43.png" alt="" />
+
+                </div>
+
+            </div>
+
+            <div class="row">
+                <div class="image-item">
+                    <img src="assets/prozess_aktuell/Bildschirmfoto 2023-07-05 um 10.20.33.png" alt="" />
+
+                </div>
+
+                <div class="image-item">
+                    <img src="assets/prozess_aktuell/Bildschirmfoto 2023-07-05 um 10.03.11.png" alt="" />
+
+                </div>
+
+            </div>
+
+            <div class="row">
+
+
+                <div class="image-item">
+                    <img src="assets/prozess_aktuell/Bildschirmfoto 2023-07-05 um 10.27.06.png" alt="" />
+
+                </div>
+                <div class="image-item">
+                    <img src="assets/prozess_aktuell/Bildschirmfoto 2023-07-05 um 10.27.41.png" alt="" />
+
+                </div>
+
+                <div class="image-item">
+                    <img src="assets/prozess_aktuell/Bildschirmfoto 2023-07-05 um 10.28.31.png" alt="" />
+
+                </div>
+            </div>
+
+
+
+
+            <div class="column">
+                <div class="image-item">
+                    <img src="assets/prozess_aktuell/Bildschirmfoto 2023-07-05 um 10.29.56.png" alt="" />
+
+                </div>
+
+            </div>
+
+
+            <div class="row">
+
+
+                <div class="image-item">
+                    <img src="assets/prozess_aktuell/Bildschirmfoto 2023-07-05 um 10.12.16.png" alt="" />
+
+                </div>
+                <div class="image-item">
+                    <img src="assets/prozess_aktuell/Bildschirmfoto 2023-07-05 um 10.17.37.png" alt="" />
+
+                </div>
+                <div class="image-item">
+                    <img src="assets/prozess_aktuell/Bildschirmfoto 2023-07-05 um 10.11.22.png" alt="" />
+
+                </div>
+
+            </div>
+
+
+            <div class="row">
+
+
+
+                <div class="image-item">
+                    <img src="assets/prozess_aktuell/Bildschirmfoto 2023-07-05 um 10.29.14.png" alt="" />
+
+                </div>
+
+                <div class="image-item">
+                    <img src="assets/prozess_aktuell/Bildschirmfoto 2023-07-05 um 10.26.24.png" alt="" />
+
+                </div>
+            </div>
+
+            <div class="row">
+
+
+                <div class="image-item">
+                    <img src="assets/add/Bildschirmfoto 2023-06-14 um 21.18.26.png" alt="" />
+
+                </div>
+                <div class="image-item">
+                    <img src="assets/add/Bildschirmfoto 2023-06-14 um 21.38.46.png" alt="" />
+
+                </div>
+                <div class="image-item">
+                    <img src="assets/add/Bildschirmfoto 2023-06-14 um 22.04.48.png" alt="" />
+
+                </div>
+
+            </div>
+
+
+            <div class="column">
+                <div class="image-item">
+                    <img src="assets/prozess_aktuell/Bildschirmfoto 2023-07-05 um 10.01.15.png" alt=" " />
+
+                </div>
+
+            </div>
+
+            <div class="row">
+
+
+
+                <div class="image-item">
+                    <img src="assets/add/Bildschirmfoto 2023-06-19 um 20.31.08.png" alt="" />
+
+                </div>
+                <div class="image-item">
+                    <img src="assets/add/Bildschirmfoto 2023-06-20 um 11.38.53.png" alt="" />
+
+                </div>
+
+            </div>
+
+            <div class="row">
+
+
+                <div class="image-item">
+                    <img src="assets/add/Bildschirmfoto 2023-06-14 um 21.21.04.png" alt="" />
+
+                </div>
+
+                <div class="image-item">
+                    <img src="assets/add/Bildschirmfoto 2023-06-14 um 21.20.05.png" alt="" />
+
+                </div>
+                <div class="image-item">
+                    <img src="assets/add/Bildschirmfoto 2023-06-14 um 21.20.25.png" alt="" />
+
+                </div>
+
+            </div>
+            <div class="row">
+
+
+
+                <div class="image-item">
+                    <img src="assets/add/Bildschirmfoto 2023-06-14 um 14.21.13.png" alt="" />
+
+                </div>
+                <div class="image-item">
+                    <img src="assets/add/Bildschirmfoto 2023-06-14 um 14.21.01.png" alt="" />
+
+                </div>
+
+            </div>
+
+            <div class="column">
+                <div class="image-item">
+                    <img src="assets/add/Bildschirmfoto 2023-06-26 um 17.46.59.png" alt=" " />
+
+                </div>
+
+            </div>
+
+            <div class="row">
+
+
+                <div class="image-item">
+                    <img src="assets/add/Bildschirmfoto 2023-06-26 um 17.57.35.png" alt="" />
+
+                </div>
+
+                <div class="image-item">
+                    <img src="assets/add/Bildschirmfoto 2023-06-26 um 18.00.39.png" alt="" />
+
+                </div>
+                <div class="image-item">
+                    <img src="assets/add/Bildschirmfoto 2023-06-26 um 18.00.49.png" alt="" />
+
+                </div>
+
+            </div>
+
+            <div class="row">
+
+
+
+                <div class="image-item">
+                    <img src="assets/add/Bildschirmfoto 2023-06-20 um 11.36.30.png" alt="" />
+
+                </div>
+                <div class="image-item">
+                    <img src="assets/add/Bildschirmfoto 2023-06-20 um 11.36.50.png" alt="" />
+
+                </div>
+
+            </div>
+
+
+            <div class="row">
+
+
+                <div class="image-item">
+                    <img src="assets/add/Bildschirmfoto 2023-06-19 um 20.33.16.png" alt="" />
+
+                </div>
+
+                <div class="image-item">
+                    <img src="assets/add/Bildschirmfoto 2023-06-19 um 20.42.19.png" alt="" />
+
+                </div>
+                <div class="image-item">
+                    <img src="assets/add/Bildschirmfoto 2023-06-19 um 20.45.33.png" alt="" />
+
+                </div>
+
+            </div>
+            <div class="row">
+
+
+
+                <div class="image-item">
+                    <img src="assets/add/Bildschirmfoto 2023-06-14 um 22.07.46.png" alt="" />
+
+                </div>
+                <div class="image-item">
+                    <img src="assets/add/Bildschirmfoto 2023-06-14 um 22.12.59.png" alt="" />
+
+                </div>
+
+            </div>
+
+            <div class="column">
+                <div class="image-item">
+                    <img src="assets/add/Bildschirmfoto 2023-06-20 um 13.47.01.png" alt=" " />
+
+                </div>
+
+            </div>
+            <div class="row">
+
+
+                <!-- <div class="image-item">
+                    <img src="assets/add/Bildschirmfoto 2023-06-20 um 13.38.42.png" alt="" />
+                    <div class="overlay"><span>Image title</span></div>
+                </div> -->
+
+                <div class="image-item">
+                    <img src="assets/add/Bildschirmfoto 2023-06-20 um 13.52.35.png" alt="" />
+
+                </div>
+                <div class="image-item">
+                    <img src="assets/add/Bildschirmfoto 2023-06-20 um 13.47.35.png" alt="" />
+
+                </div>
+
+            </div>
+            <div class="row">
+
+
+                <div class="image-item">
+                    <img src="assets/add/Bildschirmfoto 2023-06-20 um 14.05.27.png" alt="" />
+
+                </div>
+
+                <div class="image-item">
+                    <img src="assets/add/Bildschirmfoto 2023-06-20 um 13.59.12.png" alt="" />
+
+                </div>
+                <div class="image-item">
+                    <img src="assets/add/Bildschirmfoto 2023-06-20 um 14.22.54.png" alt="" />
+
+                </div>
+
+            </div>
+            <div class="row">
+
+
+
+                <div class="image-item">
+                    <img src="assets/add/Bildschirmfoto 2023-07-01 um 17.57.35.png" alt="" />
+
+                </div>
+                <div class="image-item">
+                    <img src="assets/add/Bildschirmfoto 2023-07-03 um 17.15.00.png" alt="" />
+
+                </div>
+
+
+            </div>
+
+            <div class="column">
+                <div class="image-item">
+                    <img src="assets/add/Bildschirmfoto 2023-06-14 um 21.19.30.png" alt=" " />
+
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+
+
+
+    
+
+<!-- <script src="assets/javascript/experiment-12.js"></script>
+<script src="assets/javascript/experiment-12-box.js"></script> -->
+
+
+
+
+    <!-- bootstrap javascript -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+
+
+</body>
+
+</html>

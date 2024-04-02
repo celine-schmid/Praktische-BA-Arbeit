@@ -121,6 +121,7 @@ nav {
 
 .navbar {
     padding: 0px;
+    width: 100%;
 }
 
 .navbar_spacer {
@@ -138,6 +139,9 @@ nav {
 .nav_oben {
     padding-bottom: 6px;
     padding-top: 6px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
 }
 
 body {
@@ -312,6 +316,11 @@ a {
     color: var(--main-bg-color);
 }
 
+.a_button{
+    text-decoration: none;
+    margin-right: 8px;
+}
+
 a:hover {
     font-variation-settings: "wght" 400, "wdth" 100, "slnt" 0, "XTRA" 600;
     color: var(--main-bg-color);
@@ -324,6 +333,13 @@ a:active {
 .alle_projekte {
     position: relative;
     top: 62px;
+}
+
+.navbar_buttons{
+    display: flex;
+  justify-content: flex-end;
+  margin-right: 12px;
+
 }
 
 
@@ -580,6 +596,11 @@ div.col-md-6 {
     img,
     p {
         margin-right: 12px;
+    }
+    .navbar_buttons{
+        flex-direction: column;
+     justify-content:flex-start;
+        padding-top: -12px;
     }
 }
 
