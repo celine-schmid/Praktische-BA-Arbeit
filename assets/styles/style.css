@@ -399,6 +399,7 @@ div.sticky {
     width: fit-content;
     height: auto;
     /* Hidden by default */
+
 }
 
 .img-container video {
@@ -501,6 +502,12 @@ div.sticky {
     margin: 24px;
     margin-right: 12px;
     margin-bottom: 12px;
+
+}
+
+#a-scroll_top{
+    color: var(--main-font-color);
+    text-decoration: none;
 }
 
 
@@ -768,6 +775,7 @@ body .container-2 {
 .grid {
     padding: 24px;
     padding-top: 12px;
+
 }
 
 .grid-item {
