@@ -180,12 +180,14 @@ h6 {
 }
 
 p {
-    font-family: "Mono-GT-America-Regular", sans-serif;
+    font-family: "GT-America-Regular", sans-serif;
     padding: 0px;
-    font-size: 16px;
+    font-size: 24px;
     color: var(--main-bg-color);
-    line-height: 120%;
+    line-height: 140%;
     margin-bottom: 0px;
+    hyphens: auto;
+    text-align: justify;
 }
 
 ul {
