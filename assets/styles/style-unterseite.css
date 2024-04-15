@@ -65,6 +65,21 @@
     src: url("../fonts/GT-America-Mono-Regular-Italic.woff") format("woff");
 }
 
+@font-face {
+    font-family: "Dackel-Body";
+    src: url("../fonts/NeueSchrift-Body.woff") format("woff");
+}
+/* 
+@font-face {
+    font-family: "Mono-GT-America-Regular-Italic";
+    src: url("../fonts/GT-America-Mono-Regular-Italic.woff") format("woff");
+}
+
+@font-face {
+    font-family: "Mono-GT-America-Regular-Italic";
+    src: url("../fonts/GT-America-Mono-Regular-Italic.woff") format("woff");
+} */
+
 /* Farbpalette */
 
 :root {
@@ -827,6 +842,13 @@ body .container-2 {
     border-color: var(--dark-color);
     margin-top: 12px;
 }
+.text-box-button-nav {
+    color: var(--dark-color);
+    border: 2px solid;
+    border-color: var(--dark-color);
+    margin-top: 12px;
+    margin-left: 12px;
+}
 
 .descriptive-box-button {
     color: var(--dark-color);
@@ -1152,4 +1174,17 @@ section {
     position: relative;
 }
 
+.video-container{
+    height: 100vh;
+    width: auto;
+}
 
+video{
+    width: auto;
+    height: 100%;
+}
+
+h6{
+    font-family: "Dackel-Body";
+
+}
