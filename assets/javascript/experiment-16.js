@@ -12,7 +12,7 @@ function setup() {
     //stroke(255);
     stroke(0);
     //strokeWeight(1);
-    strokeCap(SQUARE); //ROUND, SQUARE, PROJECT
+
     //noFill();
     //fill(0);
     angleMode(DEGREES);
@@ -41,6 +41,16 @@ function setup() {
     stroke('red');
     //line(0, 6*rasterhoehe, width, 6*rasterhoehe);
 
+
+frameRate(2);
+
+  }
+  
+  function draw() {
+    background(255);
+    let strichEnden = [ROUND, SQUARE, PROJECT];
+    let arrayZufall = floor(random(0, 3));
+    strokeCap(strichEnden[arrayZufall]); //ROUND, SQUARE, PROJECT
     //Buchstaben
     let wachstumsrate_1 = int(random(1,3))*rasterbreite;
     let wachstumsrate_2 = wachstumsrate_1*2;    //*5
@@ -164,13 +174,6 @@ function setup() {
     line(E2_3[0], E2_3[1], E2_5[0], E2_5[1]);
     line(E2_5[0], E2_5[1], E2_6[0], E2_6[1]);
 
-
-
-
-  }
-  
-  function draw() {
-    
 
   }
 

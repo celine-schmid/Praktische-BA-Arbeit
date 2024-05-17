@@ -74,7 +74,7 @@ function setup() {
   function draw() {
    background(255);
    translate(50,0);
-    noLoop();
+    //noLoop();
     translate(150,200);
     push();
     shearY(-30);

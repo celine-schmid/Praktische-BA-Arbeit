@@ -73,7 +73,7 @@ function setup() {
   
   function draw() {
    background(255);
-   translate(50,0);
+   translate(50,200);
     //noLoop();
     //translate(150,0);
     //shearY(-23);
@@ -84,7 +84,8 @@ function setup() {
    //rect(0, 100, grosseStrecke, rechteckhoehe);
    //rect(0+grosseStrecke, 100, kleineStrecke, rechteckhoehe)
 
-//shearX(-30);
+    //shearX(-30);
+    
     //Buchstaben
     //F
     stroke('black');

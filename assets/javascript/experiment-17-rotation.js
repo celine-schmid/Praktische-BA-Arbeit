@@ -78,7 +78,7 @@ blendMode(BLEND);
   // vertex(455,49);
   // endShape();
   
-  
+  //frameRate(10);
   }
   
   function draw() {
@@ -93,6 +93,7 @@ blendMode(BLEND);
 
     let seite = 60; // Length of each side of the hexagon
     // Define the height of the hexagon
+    //let seite = random(50,80);
     let hoehe = sqrt(3) * seite;
     translate(width/4, height/4);
   
@@ -103,12 +104,12 @@ blendMode(BLEND);
     // A
     noStroke();
     fill(20,40,80,0.2);
-  fill('white');
+  fill('black');
   //noFill();
   stroke('white');
-  noStroke();
+  //noStroke();
     //noFill();
-    stroke(20,40,80,0.4);
+    //stroke(20,40,80,0.4);
     //stroke('black');
     strokeWeight(2);
     push();
@@ -132,7 +133,7 @@ blendMode(BLEND);
     //noStroke();
     //fill(270,40,80,0.4);
     //noFill();
-    stroke(270,40,80,0.4);
+    //stroke(270,40,80,0.4);
     push();
     translate(115,0);
     drawRotatedHexagon(240, 100, seite, hoehe);
@@ -154,7 +155,7 @@ blendMode(BLEND);
     // I
     //fill(360,40,80,0.4);
     //noFill();
-  stroke(360,40,80,0.4);
+  //stroke(360,40,80,0.4);
   push();
   translate(293,0);
     drawRotatedHexagon(360, 300, seite, hoehe);
@@ -171,7 +172,7 @@ blendMode(BLEND);
     // S
     //fill(50,40,80,0.7);
     //fill('black');
-    stroke(200,40,80,0.4);
+   // stroke(200,40,80,0.4);
     //noFill();
     push();
     translate(470,0);
