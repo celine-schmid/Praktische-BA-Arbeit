@@ -1,153 +1,52 @@
 <!DOCTYPE html>
-<html lang="de">
-
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1">
-    <title>Praktische BA-Arbeit</title>
-    <!-- bootstrap css -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <!-- Bootstrap Icons-->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
-    <!-- html2canvas library -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.4.1/jspdf.debug.js"></script>
-    <script src="assets/scripts/p5.min.js"></script>
-    <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
-
- 
-    
-
-
-    <!-- stylesheet which overrides bootstrap -->
-    <link rel="stylesheet" href="assets/styles/kassenzettel.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Image Display</title>
 </head>
-
 <body>
-    <header>
-        <nav class="navbar"></nav>
-    </header>
-    <div id="myBtnContainer-top" class="sticky">
-        <hr id="nav_hr-top">
-        <a href="index.html"><button class="btn active" id="back-main"> Zurück</button></a>
-        <button class="btn  farbe-3-titel" onclick="myFunction2();ShowHideAboutBtn();ShowHideButtons()">Theromodrucker Automation</button>
-        <hr id="nav_hr">
-    </div>
-  
-    <div class="export-container" id="kassenzettel">
-        <div class="kassenzettel-text-container" id="hoehe-erweitert"> 
-            <div class="kassenzettel-text">
-                <h4> The Organic Code</h4>
-            </div>
-            <div class="kassenzettel-text">
-                <h5>Hochschule Luzern – Design Film Kunst
-                <br>Nylsuisseplatz 1
-                <br>6020 Luzern-Emmenbrücke
-                
-                <br><span class="rand"></span>---------------------------------------<span class="rand"></span> <br>
-                <br><div class="raum-dazwischen-container"><div class="raum-wort-element">Datum und Uhrzeit:</div> <div class="raum-wort-element" id="datetime"></div></div>
-                <br><div class="raum-dazwischen-container"><div class="raum-wort-element">Bon-Nr.:</div> <div class="raum-wort-element" id="bon-nr">1</div></div>
-                <br><div class="raum-dazwischen-container"><div class="raum-wort-element">Gestalterin:</div> <div class="raum-wort-element">Céline Schmid</div></div>
-                <br><div class="raum-dazwischen-container"><div class="raum-wort-element">Studiengang:</div> <div class="raum-wort-element">Graphic Design</div></div>
-                <br><span class="rand"></span>***************************************<span class="rand"></span> <br>
-                <br><div class="raum-dazwischen-container"><div class="raum-wort-element">Experiment:</div> <div class="raum-wort-element">3</div></div>
-                <br><span class="rand"></span>***************************************<span class="rand"></span> </h5>
-            </div>
-        </div>
-        <div class="kassenzettel-canvas" id="canvasContainer"></div>
-        <div class="kassenzettel-text-container" id="hoehe-reduziert" >
-            <div class="kassenzettel-text">
-                <h5><span class="rand"></span>---------------------------------------<span class="rand"></span><br>BESTEN DANK FÜR IHREN BESUCH!</h5>
-            </div>
-        </div>
-    </div>
-    
+    <h1>Random Image Display</h1>
+    <img id="randomImage" alt="Random Image" style="max-width:100%; max-height:100vh;">
+    <script>
+        // Array of image file names in the 'bilder_automation' folder within 'assets/images'
+        const bilder_automation = ['werkschau1.png', 'werkschau2.png', 'werkschau3.png']; // Add all your image file names here
 
+        function getRandomImage() {
+            const randomIndex = Math.floor(Math.random() * bilder_automation.length);
+            return `assets/images/bilder_automation/${bilder_automation[randomIndex]}`;
+        }
 
-    <div >
- 
-        <!-- Define the button 
-        that will be used to 
-        take the screenshot -->
-        <button onclick="takeshot()">
-            Take Screenshot
-        </button>
-    </div>
-    <h1>Screenshot:</h1>
-    <div id="output"></div>
+        function downloadImage(url, filename) {
+            fetch(url)
+                .then(response => response.blob())
+                .then(blob => {
+                    const a = document.createElement('a');
+                    a.href = URL.createObjectURL(blob);
+                    a.download = filename;
+                    document.body.appendChild(a);
+                    a.click();
+                    document.body.removeChild(a);
+                })
+                .catch(console.error);
+        }
 
-<script>
-let bonNr = 1; // Counter for Bon-Nr.
+        function displayRandomImage() {
+            const randomImage = getRandomImage();
+            const imgElement = document.getElementById('randomImage');
+            imgElement.src = randomImage;
 
-// Function to update date and time every second
-function updateTime() {
-    // Get current date and time
-    var now = new Date();
-    var datetime = now.toLocaleString();
-  
-    // Insert date and time into HTML
-    document.getElementById("datetime").innerHTML = datetime;
-}
+            // Wait for the image to load before downloading it
+            imgElement.onload = () => {
+                downloadImage(randomImage, 'werkschau.png');
+            };
 
-// Update date and time immediately
-updateTime();
+            // Schedule the next image display after 2 minutes (120,000 milliseconds)
+            setTimeout(displayRandomImage, 120000);
+        }
 
-// Update date and time every second
-setInterval(updateTime, 1000); // 1000 milliseconds = 1 second
-
-// Get references to the child elements
-const textContainer1 = document.getElementById('hoehe-erweitert');
-const canvasContainer = document.getElementById('canvasContainer');
-const textContainer2 = document.getElementById('hoehe-reduziert');
-
-// Function to calculate and set the width of the export container
-function setExportContainerWidth() {
-    const totalWidth = textContainer1.offsetWidth + canvasContainer.offsetWidth + textContainer2.offsetWidth;
-    document.getElementById('kassenzettel').style.width = (totalWidth) + 'px';
-}
-
-// Call the function initially to set the width
-setExportContainerWidth();
-
-// Add event listeners to listen for changes in the width of the child elements
-window.addEventListener('resize', setExportContainerWidth);
-
-function takeshot() {
-    let div = document.getElementById('kassenzettel');
-
-    // Specify the DPI as 304
-    let options = {
-        dpi: 304
-    };
-
-    // Use the html2canvas function to take a screenshot with specified options
-    html2canvas(div, options).then(function(canvas) {
-        // Convert the canvas image data to a data URL
-        let imageData = canvas.toDataURL('image/png');
-        // Create a link element
-        let link = document.createElement('a');
-        // Set the href attribute to the data URL
-        link.href = imageData;
-        // Set the download attribute to the desired filename
-        link.download = 'kassenzettel.png';
-        // Programmatically click the link to trigger the download
-        link.click();
-        
-        // Increment Bon-Nr.
-        bonNr++;
-        document.getElementById("bon-nr").innerHTML = bonNr;
-    });
-}
-
-// Call the function to take
-// a screenshot every 2 minutes
-//setInterval(takeshot, 120000);
-
-</script>
-    
-
-<script src="assets/javascript/thermodrucker-automation.js"></script>
+        // Initial call to display the first random image
+        displayRandomImage();
+    </script>
 </body>
-
 </html>
