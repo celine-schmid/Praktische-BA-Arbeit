@@ -5,9 +5,9 @@ let buchstabenabstand = 0;
 let wortabstand = schriftgrad / 2; 
 let strichstaerke = 30;
 let strichstaerke_waagerecht = strichstaerke * 0.8;
-let strichstaerke_fein = 10;
+let strichstaerke_fein = 8;
 
-let noiseOffset = 0.001; //0.1
+let noiseOffset = 1; //0.001 -> SCHRIFT DEUTLICHER BEI ZB 0.1
 
 
 // Horizontale Schriftlinien
@@ -256,17 +256,17 @@ a.translate(-0.1 * schriftgrad,0);
 
   // «Schriftkegel» der Versalien erstellen
   H = createGraphics(E_schriftbild_3 + (2 * H_vnb), schriftgrad * 0.95);
-  H.background('white');
+
   H.strokeWeight(30);
   H.strokeCap(SQUARE);
-  O = createGraphics(O_schriftbild + (2 * O_vnb), schriftgrad * 0.95);
-  O.background('white');
+  O = createGraphics(O_schriftbild + (8 * O_vnb), schriftgrad * 0.95);
+
   // Zurichtung testen und allenfalls die Parameter in H_vnb und/oder O_vnb anpassen.
-  E = createGraphics(E_schriftbild + H_vnb + H_vnb, schriftgrad * 0.95);
+  E = createGraphics(E_schriftbild + H_vnb + H_vnb+O_vnb+O_vnb, schriftgrad * 0.95);
 
-  A = createGraphics(E_schriftbild_4 + (2 * Versal_vbn_minimal), schriftgrad * 0.95);
+  A = createGraphics(E_schriftbild_4 + (5 * Versal_vbn_minimal)+O_vnb+O_vnb, schriftgrad * 0.95);
 
-  B = createGraphics(E_schriftbild_3 + H_vnb + H_vnb_halbiert, schriftgrad * 0.95); //angepasst
+  B = createGraphics(E_schriftbild_3 + H_vnb + H_vnb_halbiert+H_vnb+O_vnb, schriftgrad * 0.95); //angepasst
 
   C = createGraphics(E_schriftbild_2 + O_vnb + H_vnb_halbiert + O_vnb+O_vnb+O_vnb+O_vnb+200, schriftgrad * 0.95);
 
@@ -280,19 +280,19 @@ a.translate(-0.1 * schriftgrad,0);
 
   J = createGraphics(E_schriftbild_1 + Versal_vbn_minimal + H_vnb, schriftgrad * 0.95);
 
-  K = createGraphics(E_schriftbild_7 + H_vnb + Versal_vbn_minimal+ H_vnb, schriftgrad * 0.95);
+  K = createGraphics(E_schriftbild_7 + H_vnb + Versal_vbn_minimal+ H_vnb+O_vnb+O_vnb+O_vnb, schriftgrad * 0.95);
 
-  L = createGraphics(E_schriftbild_1 + H_vnb + H_vnb, schriftgrad * 0.95);
+  L = createGraphics(E_schriftbild_1 + H_vnb + H_vnb+O_vnb, schriftgrad * 0.95);
 
   M = createGraphics(E_schriftbild_5 + (2 * H_vnb_vermindert), schriftgrad * 0.95); //angepasst
 
-  N = createGraphics(E_schriftbild_5 + (2 * H_vnb_vermindert), schriftgrad * 0.95); //angepasst
+  N = createGraphics(E_schriftbild_5 + (2 * H_vnb_vermindert)+O_vnb+O_vnb, schriftgrad * 0.95); //angepasst
 
   P = createGraphics(E_schriftbild + H_vnb + O_vnb, schriftgrad * 0.95); // angepasst
 
   Q = createGraphics(O_schriftbild + (2 * O_vnb), schriftgrad * 0.95);
 
-  R = createGraphics(E_schriftbild + H_vnb + O_vnb + H_vnb + H_vnb_halbiert, schriftgrad * 0.95);
+  R = createGraphics(E_schriftbild + H_vnb + O_vnb + H_vnb + H_vnb_halbiert+ O_vnb+O_vnb+O_vnb, schriftgrad * 0.95);
 
   S = createGraphics(E_schriftbild_7 + (4 * Versal_vbn_augenmass), schriftgrad * 0.95);
 
@@ -480,7 +480,7 @@ function draw() {
     let wiggleFactor = 10; // Change this value to adjust the squiggly effect
 
 // POINTS, LINES, TRIANGLES, TRIANGLE_FAN, TRIANGLE_STRIP, QUADS, QUAD_STRIP, TESS
-let form_art = TRIANGLE_STRIP; 
+let form_art = TRIANGLE_STRIP;  //TRIANGLE_STRIP -> QUAD_STRIP auch interessant
 
 let schritt = 0.005; //0.02
 
@@ -583,118 +583,139 @@ let oy = outerRadiusY * kappa;
 let ix = innerRadiusX * kappa;
 let iy = innerRadiusY * kappa;
 
-O.beginShape();
-O.fill('black');
+// O.beginShape();
+// O.fill('black');
 
-// Outer ellipse
-O.vertex(centerX + outerRadiusX, centerY);
-O.bezierVertex(centerX + outerRadiusX, centerY - oy, 
-               centerX + ox, centerY - outerRadiusY, 
-               centerX, centerY - outerRadiusY);
-O.bezierVertex(centerX - ox, centerY - outerRadiusY, 
-               centerX - outerRadiusX, centerY - oy, 
-               centerX - outerRadiusX, centerY);
-O.bezierVertex(centerX - outerRadiusX, centerY + oy, 
-               centerX - ox, centerY + outerRadiusY, 
-               centerX, centerY + outerRadiusY);
-O.bezierVertex(centerX + ox, centerY + outerRadiusY, 
-               centerX + outerRadiusX, centerY + oy, 
-               centerX + outerRadiusX, centerY);
+// // Outer ellipse
+// O.vertex(centerX + outerRadiusX, centerY);
+// O.bezierVertex(centerX + outerRadiusX, centerY - oy, 
+//                centerX + ox, centerY - outerRadiusY, 
+//                centerX, centerY - outerRadiusY);
+// O.bezierVertex(centerX - ox, centerY - outerRadiusY, 
+//                centerX - outerRadiusX, centerY - oy, 
+//                centerX - outerRadiusX, centerY);
+// O.bezierVertex(centerX - outerRadiusX, centerY + oy, 
+//                centerX - ox, centerY + outerRadiusY, 
+//                centerX, centerY + outerRadiusY);
+// O.bezierVertex(centerX + ox, centerY + outerRadiusY, 
+//                centerX + outerRadiusX, centerY + oy, 
+//                centerX + outerRadiusX, centerY);
 
-O.beginContour();
+// O.beginContour();
 
-// Inner ellipse
-O.vertex(centerX + innerRadiusX, centerY);
-O.bezierVertex(centerX + innerRadiusX, centerY + iy, 
-               centerX + ix, centerY + innerRadiusY, 
-               centerX, centerY + innerRadiusY);
-O.bezierVertex(centerX - ix, centerY + innerRadiusY, 
-               centerX - innerRadiusX, centerY + iy, 
-               centerX - innerRadiusX, centerY);
-O.bezierVertex(centerX - innerRadiusX, centerY - iy, 
-               centerX - ix, centerY - innerRadiusY, 
-               centerX, centerY - innerRadiusY);
-O.bezierVertex(centerX + ix, centerY - innerRadiusY, 
-               centerX + innerRadiusX, centerY - iy, 
-               centerX + innerRadiusX, centerY);
+// // Inner ellipse
+// O.vertex(centerX + innerRadiusX, centerY);
+// O.bezierVertex(centerX + innerRadiusX, centerY + iy, 
+//                centerX + ix, centerY + innerRadiusY, 
+//                centerX, centerY + innerRadiusY);
+// O.bezierVertex(centerX - ix, centerY + innerRadiusY, 
+//                centerX - innerRadiusX, centerY + iy, 
+//                centerX - innerRadiusX, centerY);
+// O.bezierVertex(centerX - innerRadiusX, centerY - iy, 
+//                centerX - ix, centerY - innerRadiusY, 
+//                centerX, centerY - innerRadiusY);
+// O.bezierVertex(centerX + ix, centerY - innerRadiusY, 
+//                centerX + innerRadiusX, centerY - iy, 
+//                centerX + innerRadiusX, centerY);
 
-O.endContour();
-O.endShape(CLOSE);
+// O.endContour();
+// O.endShape(CLOSE);
 ///////////////////////////////////////////////////////////////////////////////////////
 
+let O_x1 = 2*O_vnb;
+let O_y1 =  mittellinie ;
+let O_x2 = O_vnb +(O_schriftbild/2);
+let O_y2 = grundlinie_ueberhang ;
+O.push();
+O.beginShape(form_art);
+O.strokeJoin(BEVEL);
+O.strokeCap(PROJECT);
+O.stroke(0);
+O.fill(0);
+O.strokeWeight(strichstaerke_fein);
 
-A.beginShape();
-A.noFill();
-A.strokeCap(PROJECT);
-A.strokeJoin(BEVEL);
-A.strokeWeight(strichstaerke);
-A.vertex(Versal_vbn_minimal + (strichstaerke/2 ), grundlinie);
-A.vertex(Versal_vbn_minimal + (E_schriftbild_4 / 2), H_linie);
-A.vertex(Versal_vbn_minimal + E_schriftbild_4 - (strichstaerke /2), grundlinie);
-A.endShape();
-A.beginShape();
-A.strokeCap(SQUARE);
-A.strokeWeight(strichstaerke_waagerecht);
-A.vertex(Versal_vbn_minimal + (E_schriftbild_4 * 0.24), versalien_hilfslinie_2);
-A.vertex(Versal_vbn_minimal + (E_schriftbild_4 * 0.74 ), versalien_hilfslinie_2);
-A.endShape();
-A.beginShape();
-A.fill('white');
-A.noStroke();
-A.vertex(0, grundlinie);
-A.vertex(E_schriftbild_4 + (2 * Versal_vbn_minimal), grundlinie);
-A.vertex(E_schriftbild_4 + (2 * Versal_vbn_minimal), schriftgrad * 0.95);
-A.vertex(0, schriftgrad * 0.95);
-A.endShape();
+  for (let t = 0; t <= 1; t += schritt) {
+    let x = lerp(O_x1, O_x2, t);
+    let y = lerp(O_y1, O_y2, t);
+    let xOffset = map(noise(noiseOffset, t * 5), 0, 1, -30, 40);
+    let yOffset = map(noise(noiseOffset + 1000, t * 5), 0, 1, -10, 40);  // Different noise offset for y to make the wiggle more irregular
+    
+    O.vertex(x + xOffset, y + yOffset);
+  }
 
-// B
-B.push();
-B.beginShape();
-B.strokeWeight(strichstaerke);
-B.strokeCap(SQUARE);
-B.vertex(H_vnb + (strichstaerke /2), H_linie);
-B.vertex(H_vnb + (strichstaerke /2), grundlinie);
-B.endShape();
-B.beginShape();
-B.vertex(H_vnb + (strichstaerke /2), H_linie + (strichstaerke/2));
-B.vertex(H_vnb + (strichstaerke /2) + (E_schriftbild_3 * 0.5), H_linie + (strichstaerke/2));
-B.endShape();
-B.beginShape();
-B.vertex(H_vnb + (strichstaerke /2), versalien_hilfslinie_1);
-B.vertex(H_vnb + (strichstaerke /2) + (E_schriftbild_3 * 0.5), versalien_hilfslinie_1);
-B.endShape();
-B.beginShape();
-B.vertex(H_vnb + (strichstaerke /2), grundlinie -(strichstaerke/2));
-B.vertex(H_vnb + (strichstaerke /2) + (E_schriftbild_3 * 0.5), grundlinie -(strichstaerke/2));
-B.endShape();
-B.pop();
-B.push();
-B.strokeWeight(strichstaerke);
-B.strokeCap(SQUARE);
-B.noFill();
-B.beginShape();
-B.vertex(H_vnb + strichstaerke + (E_schriftbild_3 / 3), H_linie + (strichstaerke / 2));
+O.endShape();
+O.pop();
+let O2_x1 = O_vnb +(O_schriftbild/2);
+let O2_y1 =  grundlinie_ueberhang ;
+let O2_x2 = O_vnb +O_schriftbild;
+let O2_y2 = mittellinie ;
+O.push();
+O.beginShape(form_art);
+O.strokeJoin(BEVEL);
+O.strokeCap(PROJECT);
+O.stroke(0);
+O.fill(0);
+O.strokeWeight(strichstaerke_fein);
 
-let B_controlX1 = H_vnb + strichstaerke + (E_schriftbild / 2) + 40;
-let B_controlY1 = H_linie + (strichstaerke / 2) ;
-let B_controlX2 = H_vnb + strichstaerke + (E_schriftbild / 2) + 40;
-let B_controlY2 = versalien_hilfslinie_1;
-B.bezierVertex(B_controlX1, B_controlY1, B_controlX2, B_controlY2, H_vnb + strichstaerke + (E_schriftbild_3 / 3), versalien_hilfslinie_1);
-B.endShape();
-B.pop();
-B.push();
-B.strokeWeight(strichstaerke);
-B.strokeCap(SQUARE);
-B.noFill();
-B.beginShape();
-B.vertex(H_vnb + strichstaerke + (E_schriftbild_3 / 3), grundlinie - (strichstaerke / 2));
-let B2_controlX1 = H_vnb + strichstaerke + (E_schriftbild_3 / 2) + 55;
-let B2_controlY1 = grundlinie- (strichstaerke / 2) ;
-let B2_controlX2 = H_vnb + strichstaerke + (E_schriftbild_3 / 2) + 55;
-let B2_controlY2 = versalien_hilfslinie_1;
-B.bezierVertex(B2_controlX1, B2_controlY1, B2_controlX2, B2_controlY2, H_vnb + strichstaerke + (E_schriftbild_3 / 3), versalien_hilfslinie_1);
-B.endShape();
-B.pop();
+  for (let t = 0; t <= 1; t += schritt) {
+    let x = lerp(O2_x1, O2_x2, t);
+    let y = lerp(O2_y1, O2_y2, t);
+    let xOffset = map(noise(noiseOffset, t * 5), 0, 1, -30, 40);
+    let yOffset = map(noise(noiseOffset + 1000, t * 5), 0, 1, -10, 40);  // Different noise offset for y to make the wiggle more irregular
+    
+    O.vertex(x + xOffset, y + yOffset);
+  }
+
+O.endShape();
+O.pop();
+let O3_x1 = O_vnb +O_schriftbild;
+let O3_y1 =  mittellinie ;
+let O3_x2 = O_vnb +(O_schriftbild/2);
+let O3_y2 = H_linie_ueberhang ;
+O.push();
+O.beginShape(form_art);
+O.strokeJoin(BEVEL);
+O.strokeCap(PROJECT);
+O.stroke(0);
+O.fill(0);
+O.strokeWeight(strichstaerke_fein);
+
+  for (let t = 0; t <= 1; t += schritt) {
+    let x = lerp(O3_x1, O3_x2, t);
+    let y = lerp(O3_y1, O3_y2, t);
+    let xOffset = map(noise(noiseOffset, t * 5), 0, 1, -30, 40);
+    let yOffset = map(noise(noiseOffset + 1000, t * 5), 0, 1, -10, 40);  // Different noise offset for y to make the wiggle more irregular
+    
+    O.vertex(x + xOffset, y + yOffset);
+  }
+
+O.endShape();
+O.pop();
+let O4_x1 = O_vnb +(O_schriftbild/2);
+let O4_y1 =  H_linie_ueberhang ;
+let O4_x2 = 2*O_vnb;
+let O4_y2 = mittellinie ;
+O.push();
+O.beginShape(form_art);
+O.strokeJoin(BEVEL);
+O.strokeCap(PROJECT);
+O.stroke(0);
+O.fill(0);
+O.strokeWeight(strichstaerke_fein);
+
+  for (let t = 0; t <= 1; t += schritt) {
+    let x = lerp(O4_x1, O4_x2, t);
+    let y = lerp(O4_y1, O4_y2, t);
+    let xOffset = map(noise(noiseOffset, t * 5), 0, 1, -30, 40);
+    let yOffset = map(noise(noiseOffset + 1000, t * 5), 0, 1, -10, 40);  // Different noise offset for y to make the wiggle more irregular
+    
+    O.vertex(x + xOffset, y + yOffset);
+  }
+
+O.endShape();
+O.pop();
+
+
 // C
 // let C_outerRadiusX = O_schriftbild / 2.3; 
 // let C_outerRadiusY = O_versalhoehe / 2; 
@@ -908,24 +929,6 @@ M.pop();
 // M.vertex(E_schriftbild_5 + (2 * H_vnb_vermindert) - (strichstaerke), grundlinie);
 // M.endShape();
 // N
-N.push();
-N.beginShape();
-N.strokeWeight(strichstaerke);
-N.strokeCap(PROJECT);
-N.strokeJoin(ROUND);
-N.vertex(H_vnb_vermindert + (strichstaerke / 2), grundlinie);
-N.vertex(H_vnb_vermindert + (strichstaerke / 2), H_linie);
-N.vertex(H_vnb_vermindert + E_schriftbild_5 - (strichstaerke / 2), grundlinie);
-N.vertex(H_vnb_vermindert + E_schriftbild_5 - (strichstaerke / 2), H_linie);
-N.endShape();
-N.pop();
-N.push();
-N.fill(buchstaben_hintergrund);
-N.noStroke();
-N.rect(0, 0, (2 * H_vnb_vermindert) + E_schriftbild_5, H_linie);
-N.rect(0, grundlinie, (2 * H_vnb_vermindert) + E_schriftbild_5, (schriftgrad * 0.95) - grundlinie);
-N.pop();
-
 
 // Q
 // Gemäss der Erstellung des O
@@ -1198,7 +1201,7 @@ Y.pop();
 // }
 // H.endShape();
   
- noiseOffset += 0.002;  // Increment noise offset for animation effect -> spannende Zahlen; 500, 0.1, 0.01, 0.02 //50
+ noiseOffset += 0.2;  // 0.002  Increment noise offset for animation effect -> spannende Zahlen; 500, 0.1, 0.01, 0.02 //50
 //////////////////////////////////////////////////////////////////////////////////////////////
  
 
@@ -2448,8 +2451,346 @@ P.strokeWeight(strichstaerke_fein);
 P.endShape();
 P.pop();
 
+// N
+let N_x1 = H_vnb_vermindert;
+let N_y1 = grundlinie;
+let N_x2 = H_vnb_vermindert;
+let N_y2 = H_linie;
+N.push();
+N.beginShape(form_art);
+N.strokeJoin(BEVEL);
+N.strokeCap(ROUND);
+N.stroke(0);
+N.strokeWeight(strichstaerke_fein);
+
+  for (let t = 0; t <= 1; t += schritt) {
+    let x = lerp(N_x1, N_x2, t);
+    let y = lerp(N_y1, N_y2, t);
+    let xOffset = map(noise(noiseOffset, t * 5), 0, 1, -5, 40);
+    let yOffset = map(noise(noiseOffset + 1000, t * 5), 0, 1, -5, 40);  // Different noise offset for y to make the wiggle more irregular
+    
+    N.vertex(x + xOffset, y + yOffset);
+  }
+
+N.endShape();
+N.pop();
+let N2_x1 = H_vnb_vermindert;
+let N2_y1 = H_linie;
+let N2_x2 = H_vnb_vermindert +E_schriftbild_7;
+let N2_y2 = grundlinie;
+N.push();
+N.beginShape(form_art);
+N.strokeJoin(BEVEL);
+N.strokeCap(ROUND);
+N.stroke(0);
+N.strokeWeight(strichstaerke_fein);
+
+  for (let t = 0; t <= 1; t += schritt) {
+    let x = lerp(N2_x1, N2_x2, t);
+    let y = lerp(N2_y1, N2_y2, t);
+    let xOffset = map(noise(noiseOffset, t * 5), 0, 1, -5, 40);
+    let yOffset = map(noise(noiseOffset + 1000, t * 5), 0, 1, -5, 40);  // Different noise offset for y to make the wiggle more irregular
+    
+    N.vertex(x + xOffset, y + yOffset);
+  }
+
+N.endShape();
+N.pop();
+let N3_x1 = H_vnb_vermindert+E_schriftbild_7;
+let N3_y1 = grundlinie;
+let N3_x2 = H_vnb_vermindert +E_schriftbild_7;
+let N3_y2 = H_linie;
+N.push();
+N.beginShape(form_art);
+N.strokeJoin(BEVEL);
+N.strokeCap(ROUND);
+N.stroke(0);
+N.strokeWeight(strichstaerke_fein);
+
+  for (let t = 0; t <= 1; t += schritt) {
+    let x = lerp(N3_x1, N3_x2, t);
+    let y = lerp(N3_y1, N3_y2, t);
+    let xOffset = map(noise(noiseOffset, t * 5), 0, 1, -5, 40);
+    let yOffset = map(noise(noiseOffset + 1000, t * 5), 0, 1, -5, 40);  // Different noise offset for y to make the wiggle more irregular
+    
+    N.vertex(x + xOffset, y + yOffset);
+  }
+
+N.endShape();
+N.pop();
+
+// N.push();
+// N.beginShape();
+// N.strokeWeight(strichstaerke);
+// N.strokeCap(PROJECT);
+// N.strokeJoin(ROUND);
+// N.vertex(H_vnb_vermindert + (strichstaerke / 2), grundlinie);
+// N.vertex(H_vnb_vermindert + (strichstaerke / 2), H_linie);
+// N.vertex(H_vnb_vermindert + E_schriftbild_5 - (strichstaerke / 2), grundlinie);
+// N.vertex(H_vnb_vermindert + E_schriftbild_5 - (strichstaerke / 2), H_linie);
+// N.endShape();
+// N.pop();
+// N.push();
+// N.fill(buchstaben_hintergrund);
+// N.noStroke();
+// N.rect(0, 0, (2 * H_vnb_vermindert) + E_schriftbild_5, H_linie);
+// N.rect(0, grundlinie, (2 * H_vnb_vermindert) + E_schriftbild_5, (schriftgrad * 0.95) - grundlinie);
+// N.pop();
+
+// A
+let A_x1 = Versal_vbn_minimal;
+let A_y1 = grundlinie;
+let A_x2 = Versal_vbn_minimal+(E_schriftbild_4/2);
+let A_y2 = H_linie;
+A.push();
+A.beginShape(form_art);
+A.strokeJoin(BEVEL);
+A.strokeCap(ROUND);
+A.stroke(0);
+A.strokeWeight(strichstaerke_fein);
+
+  for (let t = 0; t <= 1; t += schritt) {
+    let x = lerp(A_x1, A_x2, t);
+    let y = lerp(A_y1, A_y2, t);
+    let xOffset = map(noise(noiseOffset, t * 5), 0, 1, -5, 40);
+    let yOffset = map(noise(noiseOffset + 1000, t * 5), 0, 1, -5, 40);  // Different noise offset for y to make the wiggle more irregular
+    
+    A.vertex(x + xOffset, y + yOffset);
+  }
+
+A.endShape();
+A.pop();
+let A2_x1 = Versal_vbn_minimal+(E_schriftbild_4/2);
+let A2_y1 = H_linie;
+let A2_x2 = Versal_vbn_minimal+E_schriftbild_4;
+let A2_y2 = grundlinie;
+A.push();
+A.beginShape(form_art);
+A.strokeJoin(BEVEL);
+A.strokeCap(ROUND);
+A.stroke(0);
+A.strokeWeight(strichstaerke_fein);
+
+  for (let t = 0; t <= 1; t += schritt) {
+    let x = lerp(A2_x1, A2_x2, t);
+    let y = lerp(A2_y1, A2_y2, t);
+    let xOffset = map(noise(noiseOffset, t * 5), 0, 1, -5, 40);
+    let yOffset = map(noise(noiseOffset + 1000, t * 5), 0, 1, -5, 40);  // Different noise offset for y to make the wiggle more irregular
+    
+    A.vertex(x + xOffset, y + yOffset);
+  }
+
+A.endShape();
+A.pop();
+
+let A3_x1 = Versal_vbn_minimal* 10;
+let A3_y1 = versalien_hilfslinie_1;
+let A3_x2 = (Versal_vbn_minimal+E_schriftbild_4)-(Versal_vbn_minimal*10);
+let A3_y2 = versalien_hilfslinie_1;
+A.push();
+A.beginShape(form_art);
+A.strokeJoin(BEVEL);
+A.strokeCap(ROUND);
+A.stroke(0);
+A.strokeWeight(strichstaerke_fein);
+
+  for (let t = 0; t <= 1; t += schritt) {
+    let x = lerp(A3_x1, A3_x2, t);
+    let y = lerp(A3_y1, A3_y2, t);
+    let xOffset = map(noise(noiseOffset, t * 5), 0, 1, -5, 40);
+    let yOffset = map(noise(noiseOffset + 1000, t * 5), 0, 1, -5, 40);  // Different noise offset for y to make the wiggle more irregular
+    
+    A.vertex(x + xOffset, y + yOffset);
+  }
+
+A.endShape();
+A.pop();
+
+// A.beginShape();
+// A.noFill();
+// A.strokeCap(PROJECT);
+// A.strokeJoin(BEVEL);
+// A.strokeWeight(strichstaerke);
+// A.vertex(Versal_vbn_minimal + (strichstaerke/2 ), grundlinie);
+// A.vertex(Versal_vbn_minimal + (E_schriftbild_4 / 2), H_linie);
+// A.vertex(Versal_vbn_minimal + E_schriftbild_4 - (strichstaerke /2), grundlinie);
+// A.endShape();
+// A.beginShape();
+// A.strokeCap(SQUARE);
+// A.strokeWeight(strichstaerke_waagerecht);
+// A.vertex(Versal_vbn_minimal + (E_schriftbild_4 * 0.24), versalien_hilfslinie_2);
+// A.vertex(Versal_vbn_minimal + (E_schriftbild_4 * 0.74 ), versalien_hilfslinie_2);
+// A.endShape();
+// A.beginShape();
+// A.fill('white');
+// A.noStroke();
+// A.vertex(0, grundlinie);
+// A.vertex(E_schriftbild_4 + (2 * Versal_vbn_minimal), grundlinie);
+// A.vertex(E_schriftbild_4 + (2 * Versal_vbn_minimal), schriftgrad * 0.95);
+// A.vertex(0, schriftgrad * 0.95);
+// A.endShape();
 
 
+
+// B
+let B_x1 = H_vnb;
+let B_y1 = H_linie;
+let B_x2 = H_vnb;
+let B_y2 = grundlinie;
+B.push();
+B.beginShape(form_art);
+B.strokeJoin(BEVEL);
+B.strokeCap(ROUND);
+B.stroke(0);
+B.strokeWeight(strichstaerke_fein);
+
+  for (let t = 0; t <= 1; t += schritt) {
+    let x = lerp(B_x1, B_x2, t);
+    let y = lerp(B_y1, B_y2, t);
+    let xOffset = map(noise(noiseOffset, t * 5), 0, 1, -5, 40);
+    let yOffset = map(noise(noiseOffset + 1000, t * 5), 0, 1, -5, 40);  // Different noise offset for y to make the wiggle more irregular
+    
+    B.vertex(x + xOffset, y + yOffset);
+  }
+
+B.endShape();
+B.pop();
+let B2_x1 = H_vnb;
+let B2_y1 = grundlinie;
+let B2_x2 = H_vnb + E_schriftbild_3;
+let B2_y2 = grundlinie;
+B.push();
+B.beginShape(form_art);
+B.strokeJoin(BEVEL);
+B.strokeCap(ROUND);
+B.stroke(0);
+B.strokeWeight(strichstaerke_fein);
+
+  for (let t = 0; t <= 1; t += schritt) {
+    let x = lerp(B2_x1, B2_x2, t);
+    let y = lerp(B2_y1, B2_y2, t);
+    let xOffset = map(noise(noiseOffset, t * 5), 0, 1, -5, 40);
+    let yOffset = map(noise(noiseOffset + 1000, t * 5), 0, 1, -5, 40);  // Different noise offset for y to make the wiggle more irregular
+    
+    B.vertex(x + xOffset, y + yOffset);
+  }
+
+B.endShape();
+B.pop();
+let B3_x1 = H_vnb + E_schriftbild_3;
+let B3_y1 = grundlinie;
+let B3_x2 = H_vnb;
+let B3_y2 = versalien_hilfslinie_1;
+B.push();
+B.beginShape(form_art);
+B.strokeJoin(BEVEL);
+B.strokeCap(ROUND);
+B.stroke(0);
+B.strokeWeight(strichstaerke_fein);
+
+  for (let t = 0; t <= 1; t += schritt) {
+    let x = lerp(B3_x1, B3_x2, t);
+    let y = lerp(B3_y1, B3_y2, t);
+    let xOffset = map(noise(noiseOffset, t * 5), 0, 1, -5, 40);
+    let yOffset = map(noise(noiseOffset + 1000, t * 5), 0, 1, -5, 40);  // Different noise offset for y to make the wiggle more irregular
+    
+    B.vertex(x + xOffset, y + yOffset);
+  }
+
+B.endShape();
+B.pop();
+let B4_x1 = H_vnb;
+let B4_y1 = versalien_hilfslinie_1;
+let B4_x2 = H_vnb + E_schriftbild_3;
+let B4_y2 = versalien_hilfslinie_1;
+B.push();
+B.beginShape(form_art);
+B.strokeJoin(BEVEL);
+B.strokeCap(ROUND);
+B.stroke(0);
+B.strokeWeight(strichstaerke_fein);
+
+  for (let t = 0; t <= 1; t += schritt) {
+    let x = lerp(B4_x1, B4_x2, t);
+    let y = lerp(B4_y1, B4_y2, t);
+    let xOffset = map(noise(noiseOffset, t * 5), 0, 1, -5, 40);
+    let yOffset = map(noise(noiseOffset + 1000, t * 5), 0, 1, -5, 40);  // Different noise offset for y to make the wiggle more irregular
+    
+    B.vertex(x + xOffset, y + yOffset);
+  }
+
+B.endShape();
+B.pop();
+let B5_x1 = H_vnb+E_schriftbild_3;
+let B5_y1 = versalien_hilfslinie_1;
+let B5_x2 = H_vnb ;
+let B5_y2 = H_linie;
+B.push();
+B.beginShape(form_art);
+B.strokeJoin(BEVEL);
+B.strokeCap(ROUND);
+B.stroke(0);
+B.strokeWeight(strichstaerke_fein);
+
+  for (let t = 0; t <= 1; t += schritt) {
+    let x = lerp(B5_x1, B5_x2, t);
+    let y = lerp(B5_y1, B5_y2, t);
+    let xOffset = map(noise(noiseOffset, t * 5), 0, 1, -5, 40);
+    let yOffset = map(noise(noiseOffset + 1000, t * 5), 0, 1, -5, 40);  // Different noise offset for y to make the wiggle more irregular
+    
+    B.vertex(x + xOffset, y + yOffset);
+  }
+
+B.endShape();
+B.pop();
+
+// B.push();
+// B.beginShape();
+// B.strokeWeight(strichstaerke);
+// B.strokeCap(SQUARE);
+// B.vertex(H_vnb + (strichstaerke /2), H_linie);
+// B.vertex(H_vnb + (strichstaerke /2), grundlinie);
+// B.endShape();
+// B.beginShape();
+// B.vertex(H_vnb + (strichstaerke /2), H_linie + (strichstaerke/2));
+// B.vertex(H_vnb + (strichstaerke /2) + (E_schriftbild_3 * 0.5), H_linie + (strichstaerke/2));
+// B.endShape();
+// B.beginShape();
+// B.vertex(H_vnb + (strichstaerke /2), versalien_hilfslinie_1);
+// B.vertex(H_vnb + (strichstaerke /2) + (E_schriftbild_3 * 0.5), versalien_hilfslinie_1);
+// B.endShape();
+// B.beginShape();
+// B.vertex(H_vnb + (strichstaerke /2), grundlinie -(strichstaerke/2));
+// B.vertex(H_vnb + (strichstaerke /2) + (E_schriftbild_3 * 0.5), grundlinie -(strichstaerke/2));
+// B.endShape();
+// B.pop();
+// B.push();
+// B.strokeWeight(strichstaerke);
+// B.strokeCap(SQUARE);
+// B.noFill();
+// B.beginShape();
+// B.vertex(H_vnb + strichstaerke + (E_schriftbild_3 / 3), H_linie + (strichstaerke / 2));
+
+// let B_controlX1 = H_vnb + strichstaerke + (E_schriftbild / 2) + 40;
+// let B_controlY1 = H_linie + (strichstaerke / 2) ;
+// let B_controlX2 = H_vnb + strichstaerke + (E_schriftbild / 2) + 40;
+// let B_controlY2 = versalien_hilfslinie_1;
+// B.bezierVertex(B_controlX1, B_controlY1, B_controlX2, B_controlY2, H_vnb + strichstaerke + (E_schriftbild_3 / 3), versalien_hilfslinie_1);
+// B.endShape();
+// B.pop();
+// B.push();
+// B.strokeWeight(strichstaerke);
+// B.strokeCap(SQUARE);
+// B.noFill();
+// B.beginShape();
+// B.vertex(H_vnb + strichstaerke + (E_schriftbild_3 / 3), grundlinie - (strichstaerke / 2));
+// let B2_controlX1 = H_vnb + strichstaerke + (E_schriftbild_3 / 2) + 55;
+// let B2_controlY1 = grundlinie- (strichstaerke / 2) ;
+// let B2_controlX2 = H_vnb + strichstaerke + (E_schriftbild_3 / 2) + 55;
+// let B2_controlY2 = versalien_hilfslinie_1;
+// B.bezierVertex(B2_controlX1, B2_controlY1, B2_controlX2, B2_controlY2, H_vnb + strichstaerke + (E_schriftbild_3 / 3), versalien_hilfslinie_1);
+// B.endShape();
+// B.pop();
 
 
 }
@@ -2570,7 +2911,7 @@ function keyTyped() {
         x_startwert += schriftgrad * 0.415; 
     } else if (key === 'K') {
         drawNextLetter(K, x_startwert, y_startwert);
-        x_startwert += schriftgrad * 0.514; 
+        x_startwert += schriftgrad * 0.6; 
     } else if (key === 'L') {
         drawNextLetter(L, x_startwert, y_startwert);
         x_startwert += schriftgrad * 0.43; 
@@ -2583,7 +2924,7 @@ function keyTyped() {
         x_startwert += schriftgrad * 0.626; 
     } else if (key === 'O') {
         drawNextLetter(O, x_startwert, y_startwert);
-        x_startwert += schriftgrad * 0.57; 
+        x_startwert += schriftgrad * 0.6; 
     } else if (key === 'P') {
         drawNextLetter(P, x_startwert, y_startwert);
         x_startwert += schriftgrad * 0.442; 
