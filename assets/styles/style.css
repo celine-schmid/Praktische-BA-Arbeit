@@ -869,7 +869,7 @@ body .container-2 {
     background-color: rgb(0, 255, 191);
 }
 
-.farbe-2.filled {
+.farbe-2-rahmen-btn.filled {
     background-color: rgb(0, 255, 191);
     color: var(--main-bg-color);
 }
