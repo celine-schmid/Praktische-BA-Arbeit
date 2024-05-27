@@ -1,5 +1,5 @@
-$(document).ready(function() {
-    $('.scroll_top').click(function() {
+$(document).ready(function () {
+    $('.scroll_top').click(function () {
         $("html, body").animate({ scrollTop: 0 }, 200);
         return false;
 
@@ -7,10 +7,10 @@ $(document).ready(function() {
 
 });
 
-$(window).scroll(function() {
+$(window).scroll(function () {
     if ($(window).scrollTop() == 0) {
 
-        window.location.reload(false);
+        //window.location.reload(false);
     }
 });
 
@@ -51,16 +51,20 @@ function w3AddClass(element, name) {
             element.className += " " + arr2[i];
         }
     }
+
+    var container = document.getElementById('masonry-container');
     // init with element
     var grid = document.querySelector('.grid');
-    var msnry = new Masonry(grid, {
-        // options...
-        itemSelector: '.grid-item',
-        columnWidth: 6,
-        gutterWidth: 6
+    container.imagesLoaded(function () {
+        var msnry = new Masonry(grid, {
+            // options...
+            itemSelector: '.grid-item',
+            columnWidth: 6,
+            gutterWidth: 6
+        });
     });
 
-  
+
 
 
 }
@@ -82,7 +86,7 @@ function w3RemoveClass(element, name) {
 var btnContainer = document.getElementById("myBtnContainer");
 var btns = btnContainer.getElementsByClassName("btn");
 for (var i = 0; i < btns.length; i++) {
-    btns[i].addEventListener("click", function() {
+    btns[i].addEventListener("click", function () {
         var current = document.getElementsByClassName("active");
         current[0].className = current[0].className.replace(" active", "");
         this.className += " active";
