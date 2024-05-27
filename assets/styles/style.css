@@ -520,6 +520,8 @@ div.sticky {
     background-color: var(--main-font-color);
 }
 
+
+
 .btn::after,
 .btn_title::after {
     background-color: var(--main-font-color);
@@ -865,6 +867,11 @@ body .container-2 {
 
 .farbe-2 {
     background-color: rgb(0, 255, 191);
+}
+
+.farbe-2.filled {
+    background-color: rgb(0, 255, 191);
+    color: var(--main-bg-color);
 }
 
 .farbe-2-titel {
