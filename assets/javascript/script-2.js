@@ -27,10 +27,19 @@ function handleClick() {
     }
 }
 
+//console.log("Filter "+sessionStorage.getItem('filter'))
 //////projekte filtern
-filterSelection("all")
+if (sessionStorage.getItem('filter')!="" && sessionStorage.getItem('filter')!=null) {
+    //console.log("Filtered")
+    filterSelection(sessionStorage.getItem('filter'));
+}else{
+    filterSelection("all");
+}
+
+
 
 function filterSelection(c) {
+    
     var x, i;
     x = document.getElementsByClassName("filterDiv");
     if (c == "all") c = "";
@@ -50,6 +59,8 @@ function filterSelection(c) {
             nav[i].classList.add('filled');
         }
     }
+
+    sessionStorage.setItem('filter', c);
 }
 
 // Show filtered elements
