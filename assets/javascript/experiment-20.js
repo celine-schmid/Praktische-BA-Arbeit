@@ -522,24 +522,46 @@ let o_vnb_vermindert = o_vnb * 0.9; // Faktor muss je nach Schrift angepasst wer
 let Gemeine_vbn_minimal = n_vb * 0.2; // Faktor muss je nach Schrift angepasst werden.
 let Gemeine_vbn_augenmass = n_vb * 0.4; // Faktor muss nach Augenmass entschieden werden.
 
+// POINTS, LINES, TRIANGLES, TRIANGLE_FAN, TRIANGLE_STRIP, QUADS, QUAD_STRIP, TESS
+let form_art = TESS;
 
 // Buchstabenskelette der Versalien zeichnen.
-H.beginShape();
+H.beginShape(form_art);
 H.stroke(0);
 H.vertex(H_vnb, H_linie);
 H.vertex(H_vnb, grundlinie);
 H.endShape();
-H.beginShape();
+H.beginShape(form_art);
 H.stroke(0);
 H.vertex(H_vnb + E_schriftbild_3, H_linie);
 H.vertex(H_vnb + E_schriftbild_3, grundlinie);
 H.endShape();
-H.beginShape();
+H.beginShape(form_art);
 H.strokeWeight(strichstaerke_waagerecht); // damit die waagerechte Linie geringfügig dünner ist wie die Stämme
 H.stroke(0);
 H.vertex(H_vnb, versalien_hilfslinie_1);
 H.vertex(H_vnb + E_schriftbild_3, versalien_hilfslinie_1);
 H.endShape();
+
+// H.beginShape(POINTS);
+// H.stroke(0);
+// H.fill(0);
+// H.vertex(H_vnb, H_linie);
+// H.vertex(H_vnb, grundlinie);
+// H.endShape();
+// H.beginShape(POINTS);
+// H.stroke(0);
+// H.stroke(0);
+// H.vertex(H_vnb + E_schriftbild_3, H_linie);
+// H.vertex(H_vnb + E_schriftbild_3, grundlinie);
+// H.endShape();
+// H.beginShape(POINTS);
+// H.strokeWeight(strichstaerke_waagerecht); // damit die waagerechte Linie geringfügig dünner ist wie die Stämme
+// H.stroke(0);
+// H.stroke(0);
+// H.vertex(H_vnb, versalien_hilfslinie_1);
+// H.vertex(H_vnb + E_schriftbild_3, versalien_hilfslinie_1);
+// H.endShape();
 
 //////////////////////////////////////////////////////////////////////////////
 // ChatGPT 3.5 wurde verwendet, um mit Bézier-Kurven einen Kreis zu erstellen.
@@ -561,7 +583,7 @@ let oy = outerRadiusY * kappa;
 let ix = innerRadiusX * kappa;
 let iy = innerRadiusY * kappa;
 
-O.beginShape();
+O.beginShape(form_art);
 O.fill('black');
 
 // Outer ellipse
@@ -600,7 +622,8 @@ O.endContour();
 O.endShape(CLOSE);
 ///////////////////////////////////////////////////////////////////////////////////////
 
-E.beginShape();
+E.beginShape(form_art);
+E.stroke(0);
 E.strokeWeight(strichstaerke);
 E.strokeCap(SQUARE);
 E.vertex(E_schriftbild + H_vnb, H_linie + (strichstaerke/2));
@@ -609,7 +632,7 @@ E.vertex(H_vnb, versalien_hilfslinie_1);
 E.vertex(H_vnb, grundlinie - (strichstaerke/2));
 E.vertex(E_schriftbild + H_vnb, grundlinie - (strichstaerke/2));
 E.endShape();
-E.beginShape();
+E.beginShape(form_art);
 E.strokeWeight(strichstaerke_waagerecht);
 E.strokeCap(SQUARE);
 
@@ -618,8 +641,9 @@ E.vertex(H_vnb + E_schriftbild - (E_schriftbild * 0.1), versalien_hilfslinie_1);
 
 E.endShape();
 
-A.beginShape();
+A.beginShape(form_art);
 A.noFill();
+A.stroke(0);
 A.strokeCap(PROJECT);
 A.strokeJoin(BEVEL);
 A.strokeWeight(strichstaerke);
@@ -627,13 +651,13 @@ A.vertex(Versal_vbn_minimal + (strichstaerke/2 ), grundlinie);
 A.vertex(Versal_vbn_minimal + (E_schriftbild_4 / 2), H_linie);
 A.vertex(Versal_vbn_minimal + E_schriftbild_4 - (strichstaerke /2), grundlinie);
 A.endShape();
-A.beginShape();
+A.beginShape(form_art);
 A.strokeCap(SQUARE);
 A.strokeWeight(strichstaerke_waagerecht);
 A.vertex(Versal_vbn_minimal + (E_schriftbild_4 * 0.24), versalien_hilfslinie_2);
 A.vertex(Versal_vbn_minimal + (E_schriftbild_4 * 0.74 ), versalien_hilfslinie_2);
 A.endShape();
-A.beginShape();
+A.beginShape(form_art);
 A.fill('white');
 A.noStroke();
 A.vertex(0, grundlinie);
@@ -644,21 +668,21 @@ A.endShape();
 
 // B
 B.push();
-B.beginShape();
+B.beginShape(form_art);
 B.strokeWeight(strichstaerke);
 B.strokeCap(SQUARE);
 B.vertex(H_vnb + (strichstaerke /2), H_linie);
 B.vertex(H_vnb + (strichstaerke /2), grundlinie);
 B.endShape();
-B.beginShape();
+B.beginShape(form_art);
 B.vertex(H_vnb + (strichstaerke /2), H_linie + (strichstaerke/2));
 B.vertex(H_vnb + (strichstaerke /2) + (E_schriftbild_3 * 0.5), H_linie + (strichstaerke/2));
 B.endShape();
-B.beginShape();
+B.beginShape(form_art);
 B.vertex(H_vnb + (strichstaerke /2), versalien_hilfslinie_1);
 B.vertex(H_vnb + (strichstaerke /2) + (E_schriftbild_3 * 0.5), versalien_hilfslinie_1);
 B.endShape();
-B.beginShape();
+B.beginShape(form_art);
 B.vertex(H_vnb + (strichstaerke /2), grundlinie -(strichstaerke/2));
 B.vertex(H_vnb + (strichstaerke /2) + (E_schriftbild_3 * 0.5), grundlinie -(strichstaerke/2));
 B.endShape();
@@ -667,7 +691,7 @@ B.push();
 B.strokeWeight(strichstaerke);
 B.strokeCap(SQUARE);
 B.noFill();
-B.beginShape();
+B.beginShape(form_art);
 B.vertex(H_vnb + strichstaerke + (E_schriftbild_3 / 3), H_linie + (strichstaerke / 2));
 
 let B_controlX1 = H_vnb + strichstaerke + (E_schriftbild / 2) + 40;
@@ -681,7 +705,7 @@ B.push();
 B.strokeWeight(strichstaerke);
 B.strokeCap(SQUARE);
 B.noFill();
-B.beginShape();
+B.beginShape(form_art);
 B.vertex(H_vnb + strichstaerke + (E_schriftbild_3 / 3), grundlinie - (strichstaerke / 2));
 let B2_controlX1 = H_vnb + strichstaerke + (E_schriftbild_3 / 2) + 55;
 let B2_controlY1 = grundlinie- (strichstaerke / 2) ;
@@ -707,7 +731,7 @@ let C_iy = innerRadiusY * kappa;
 
 
 C.push();
-C.beginShape();
+C.beginShape(form_art);
 C.fill('black');
 // Outer ellipse
 C.vertex(centerX + C_outerRadiusX, centerY);
@@ -752,24 +776,24 @@ C.pop();
 
 // D
 D.push();
-D.beginShape();
+D.beginShape(form_art);
 D.strokeWeight(strichstaerke);
 D.strokeCap(SQUARE);
-D.vertex(H_vnb + (strichstaerke/2), H_linie);
-D.vertex(H_vnb + (strichstaerke/2), grundlinie);
+D.vertex(H_vnb + (strichstaerke/2), H_linie+(strichstaerke/4));
+D.vertex(H_vnb + (strichstaerke/2), grundlinie- (strichstaerke/4));
 D.endShape();
 D.pop();
 D.push();
 D.strokeWeight(strichstaerke);
 D.strokeCap(SQUARE);
 D.noFill();
-D.beginShape();
-D.vertex(H_vnb , H_linie);
+D.beginShape(form_art);
+D.vertex(H_vnb ,  H_linie+(strichstaerke/4));
 let D_controlX1 = H_vnb + (strichstaerke/2) + (schriftgrad * 0.5);
 let D_controlY1 = H_linie - (schriftgrad * 0.05);
 let D_controlX2 = H_vnb + (strichstaerke/2)+ (schriftgrad * 0.5);
-let D_controlY2 = grundlinie + + (schriftgrad * 0.05);
-D.bezierVertex(D_controlX1, D_controlY1, D_controlX2, D_controlY2, H_vnb , grundlinie );
+let D_controlY2 = grundlinie + (schriftgrad * 0.05);
+D.bezierVertex(D_controlX1, D_controlY1, D_controlX2, D_controlY2, H_vnb , grundlinie-(strichstaerke/4) );
 D.endShape();
 D.pop();
 D.push();
@@ -779,14 +803,14 @@ D.rect(0, 0, H_vnb, schriftgrad * 0.95);
 D.pop();
 // F
 F.push();
-F.beginShape();
+F.beginShape(form_art);
 F.strokeWeight(strichstaerke);
 F.strokeCap(SQUARE);
 F.vertex(H_vnb + E_schriftbild_1, H_linie + (strichstaerke / 2));
 F.vertex(H_vnb, H_linie + (strichstaerke / 2));
 F.vertex(H_vnb, grundlinie);
 F.endShape();
-F.beginShape();
+F.beginShape(form_art);
 F.strokeWeight(strichstaerke_waagerecht);
 F.vertex(H_vnb,  versalien_hilfslinie_1);
 F.vertex(H_vnb + E_schriftbild_1 - (E_schriftbild_1 * 0.1), versalien_hilfslinie_1);
@@ -811,7 +835,7 @@ let G_iy = innerRadiusY * kappa;
 
 
 G.push();
-G.beginShape();
+G.beginShape(form_art);
 G.fill('black');
 
 // Outer ellipse
@@ -856,7 +880,7 @@ G.rect(E_schriftbild_4 * 0.8, H_linie + (O_versalhoehe * 0.25), strichstaerke * 
 G.pop();
 
 G.push();
-G.beginShape();
+G.beginShape(form_art);
 G.noFill();
 G.strokeWeight(strichstaerke *1.125);
 G.strokeCap(SQUARE);
@@ -868,7 +892,7 @@ G.vertex(O_vnb + E_schriftbild_4 - (strichstaerke *3.7),    H_linie + (O_versalh
 G.endShape();
 G.pop();
 // I
-I.beginShape();
+I.beginShape(form_art);
 I.strokeWeight(strichstaerke);
 I.strokeCap(SQUARE);
 I.vertex(H_vnb + (strichstaerke / 2), H_linie);
@@ -876,7 +900,7 @@ I.vertex(H_vnb + (strichstaerke / 2), grundlinie);
 I.endShape();
 // J
 J.push();
-J.beginShape();
+J.beginShape(form_art);
 J.strokeWeight(strichstaerke);
 J.strokeCap(SQUARE);
 J.vertex(H_vnb + strichstaerke + (E_schriftbild_1 / 2), H_linie);
@@ -887,7 +911,7 @@ J.push();
 J.strokeWeight(strichstaerke);
 J.strokeCap(SQUARE);
 J.noFill();
-J.beginShape();
+J.beginShape(form_art);
 J.vertex(H_vnb + strichstaerke + (E_schriftbild_1 / 2), grundlinie);
 let J_controlX1 = H_vnb + strichstaerke + (E_schriftbild_1 / 2);
 let J_controlY1 = p_linie ;
@@ -903,14 +927,14 @@ J.pop();
 // J.pop();
 // K
 K.push();
-K.beginShape();
+K.beginShape(form_art);
 K.strokeWeight(strichstaerke);
 K.strokeCap(PROJECT);
 
 K.vertex(H_vnb + (strichstaerke / 2), H_linie);
 K.vertex(H_vnb + (strichstaerke / 2), grundlinie);
 K.endShape();
-K.beginShape();
+K.beginShape(form_art);
 K.strokeWeight(strichstaerke_waagerecht);
 K.vertex(H_vnb + E_schriftbild_7 - (strichstaerke / 2) , H_linie);
 K.vertex(H_vnb + (strichstaerke ) , versalien_hilfslinie_1);
@@ -924,20 +948,20 @@ K.rect(0, 0, H_vnb + E_schriftbild_7 + Versal_vbn_minimal, H_linie);
 K.rect(0, grundlinie, H_vnb + E_schriftbild_7 + Versal_vbn_minimal, (schriftgrad * 0.95) - grundlinie);
 K.pop();
 // L
-L.beginShape();
+L.beginShape(form_art);
 L.strokeCap(SQUARE);
 L.strokeWeight(strichstaerke);
 L.vertex(H_vnb + (strichstaerke / 2), H_linie);
 L.vertex(H_vnb + (strichstaerke / 2), grundlinie-(strichstaerke/2));
 L.endShape();
-L.beginShape();
+L.beginShape(form_art);
 L.strokeWeight(strichstaerke_waagerecht);
 L.vertex(H_vnb , grundlinie - (strichstaerke/2));
 L.vertex(H_vnb + E_schriftbild_1, grundlinie- (strichstaerke/2));
 L.endShape();
 // M
 M.push(); // push und pop stellt sicher, dass die gezeichnete Form (besonders wenn sie nicht geschlossen ist) nicht nachfolgende Formen beeinflusst
-M.beginShape();
+M.beginShape(form_art);
 M.strokeWeight(strichstaerke);
 M.strokeCap(SQUARE);
 M.strokeJoin(BEVEL);
@@ -968,7 +992,7 @@ M.pop();
 // M.endShape();
 // N
 N.push();
-N.beginShape();
+N.beginShape(form_art);
 N.strokeWeight(strichstaerke);
 N.strokeCap(PROJECT);
 N.strokeJoin(ROUND);
@@ -986,7 +1010,7 @@ N.rect(0, grundlinie, (2 * H_vnb_vermindert) + E_schriftbild_5, (schriftgrad * 0
 N.pop();
 // P
 P.push();
-P.beginShape();
+P.beginShape(form_art);
 P.strokeWeight(strichstaerke);
 P.strokeCap(SQUARE);
 P.vertex(H_vnb , H_linie);
@@ -995,11 +1019,11 @@ P.endShape();
 P.pop();
 P.push();
 P.strokeWeight(strichstaerke);
-P.beginShape();
+P.beginShape(form_art);
 P.vertex(H_vnb , H_linie + (strichstaerke / 2));
 P.vertex(H_vnb + strichstaerke + (E_schriftbild_7 /3), H_linie + (strichstaerke /2));
 P.endShape();
-P.beginShape();
+P.beginShape(form_art);
 P.vertex(H_vnb , versalien_hilfslinie_1);
 P.vertex(H_vnb + strichstaerke + (E_schriftbild_7 /3), versalien_hilfslinie_1);
 P.endShape();
@@ -1011,7 +1035,7 @@ P.push();
 P.strokeWeight(strichstaerke);
 P.strokeCap(SQUARE);
 P.noFill();
-P.beginShape();
+P.beginShape(form_art);
 P.vertex(H_vnb + strichstaerke + (E_schriftbild_7 / 3), H_linie + (strichstaerke / 2));
 // Control points for bezier curve - adjust as needed for desired curvature
 let controlX1 = H_vnb + strichstaerke + (E_schriftbild_7 / 2) + 30;
@@ -1026,7 +1050,7 @@ P.pop();
 
 // Q
 // Gemäss der Erstellung des O
-Q.beginShape();
+Q.beginShape(form_art);
 Q.fill('black');
 
 // Outer ellipse
@@ -1064,7 +1088,7 @@ Q.bezierVertex(centerX + ix, centerY - innerRadiusY,
 Q.endContour();
 Q.endShape(CLOSE);
 Q.push();
-Q.beginShape();
+Q.beginShape(form_art);
 Q.strokeWeight(strichstaerke_waagerecht);
 Q.strokeCap(SQUARE);
 Q.vertex(O_vnb + (O_schriftbild * 0.66), grundlinie - (O_versalhoehe * 0.33));
@@ -1074,7 +1098,7 @@ Q.pop();
 // R
 R.push();
 R.strokeCap(SQUARE);
-R.beginShape();
+R.beginShape(form_art);
 R.strokeWeight(strichstaerke);
 R.vertex(H_vnb, H_linie);
 R.vertex(H_vnb, grundlinie);
@@ -1082,15 +1106,15 @@ R.endShape();
 R.pop();
 R.push();
 R.strokeWeight(strichstaerke);
-R.beginShape();
+R.beginShape(form_art);
 R.vertex(H_vnb , H_linie + (strichstaerke / 2));
 R.vertex(H_vnb + strichstaerke + (E_schriftbild_7 /3), H_linie + (strichstaerke /2));
 R.endShape();
-R.beginShape();
+R.beginShape(form_art);
 R.vertex(H_vnb , versalien_hilfslinie_1);
 R.vertex(H_vnb + strichstaerke + (E_schriftbild_7 /3), versalien_hilfslinie_1);
 R.endShape();
-R.beginShape();
+R.beginShape(form_art);
 R.strokeCap(PROJECT);
 R.vertex(H_vnb + (strichstaerke / 2) , versalien_hilfslinie_1 + (strichstaerke / 2));
 R.vertex(H_vnb + E_schriftbild - (strichstaerke/2), grundlinie);
@@ -1101,7 +1125,7 @@ R.push();
 R.strokeWeight(strichstaerke);
 R.strokeCap(SQUARE);
 R.noFill();
-R.beginShape();
+R.beginShape(form_art);
 R.vertex(H_vnb + strichstaerke + (E_schriftbild_7 / 3), H_linie + (strichstaerke / 2));
 let R_controlX1 = H_vnb + strichstaerke + (E_schriftbild_7 / 2) + 30;
 let R_controlY1 = H_linie + (strichstaerke / 2) ;
@@ -1151,7 +1175,7 @@ S.strokeCap(ROUND);
 S.noFill();
 
 // Top half of the "S"
-S.beginShape();
+S.beginShape(form_art);
 S.vertex(Versal_vbn_augenmass + E_schriftbild_7, H_linie_ueberhang); // Start point of S
 
 // Control points for the top half of the "S"
@@ -1166,7 +1190,7 @@ S.bezierVertex(S_controlX1, S_controlY1, S_controlX2, S_controlY2, S_endX1, S_en
 S.endShape();
 
 // Bottom half of the "S"
-S.beginShape();
+S.beginShape(form_art);
 S.vertex(S_endX1, S_endY1); // Start from the end of the top half
 
 // Control points for the bottom half of the "S"
@@ -1182,26 +1206,26 @@ S.endShape();
 
 S.pop();
 // T
-T.beginShape();
+T.beginShape(form_art);
 T.strokeWeight(strichstaerke);
 T.strokeCap(SQUARE);
 T.vertex((E_schriftbild_2 + (2 * Versal_vbn_minimal))/2, H_linie+(strichstaerke/2));
 T.vertex((E_schriftbild_2 + (2 * Versal_vbn_minimal))/2, grundlinie);
 T.endShape();
-T.beginShape();
+T.beginShape(form_art);
 T.strokeWeight(strichstaerke_waagerecht);
 T.vertex(Versal_vbn_minimal, H_linie + (strichstaerke/2));
 T.vertex(Versal_vbn_minimal + E_schriftbild_2, H_linie + (strichstaerke/2));
 T.endShape();
 // U
 U.push();
-U.beginShape();
+U.beginShape(form_art);
 U.strokeWeight(strichstaerke);
 U.strokeCap(SQUARE);
 U.vertex(E_schriftbild_7 + H_vnb, H_linie);
 U.vertex(E_schriftbild_7 + H_vnb, grundlinie);
 U.endShape();
-U.beginShape();
+U.beginShape(form_art);
 U.vertex(H_vnb, H_linie);
 U.vertex(H_vnb, H_linie + (O_versalhoehe * 0.66));
 U.endShape();
@@ -1222,24 +1246,24 @@ U.strokeWeight(strichstaerke);
 U.strokeCap(SQUARE);
 
 
-U.beginShape();
+U.beginShape(form_art);
 U.vertex(E_schriftbild_7 + H_vnb, H_linie);
 U.vertex(E_schriftbild_7 + H_vnb, grundlinie);
 U.endShape();
-U.beginShape();
+U.beginShape(form_art);
 U.vertex(H_vnb, H_linie);
 U.vertex(H_vnb, H_linie + (O_versalhoehe * 0.66));
 U.endShape();
 
 
-U.beginShape();
+U.beginShape(form_art);
 U.vertex(startX, startY);
 U.bezierVertex(U_controlX1, U_controlY1, U_controlX2, U_controlY2, endX, endY);
 U.endShape();
 U.pop();
 // V
 
-V.beginShape();
+V.beginShape(form_art);
 V.stroke(0);
 V.strokeWeight(strichstaerke);
 V.strokeCap(PROJECT);
@@ -1248,7 +1272,7 @@ V.vertex(Versal_vbn_minimal + (strichstaerke/2), H_linie);
 V.vertex((E_schriftbild_4 + (2 * Versal_vbn_minimal))/2, grundlinie);
 V.vertex(Versal_vbn_minimal + E_schriftbild_4  -(strichstaerke/2), H_linie);
 V.endShape();
-V.beginShape();
+V.beginShape(form_art);
 V.fill('white');
 V.noStroke();
 V.vertex(0, 0);
@@ -1257,7 +1281,7 @@ V.vertex(E_schriftbild_4 + (2 * Versal_vbn_minimal), H_linie);
 V.vertex(E_schriftbild_4 + (2 * Versal_vbn_minimal), 0);
 V.vertex(0, 0);
 V.endShape();
-V.beginShape();
+V.beginShape(form_art);
 V.vertex(0,grundlinie);
 V.vertex(0, schriftgrad * 0.95);
 V.vertex(E_schriftbild_4 + (2 * Versal_vbn_minimal), schriftgrad * 0.95);
@@ -1265,7 +1289,7 @@ V.vertex(E_schriftbild_4 + (2 * Versal_vbn_minimal), grundlinie);
 V.endShape();
 // W
 W.push();
-W.beginShape();
+W.beginShape(form_art);
 W.strokeJoin(BEVEL);
 W.strokeCap(PROJECT);
 W.strokeWeight(strichstaerke);
@@ -1283,13 +1307,13 @@ W.rect(0, 0, E_schriftbild_5 + ( 2 * H_vnb_vermindert), H_linie);
 W.pop();
 // X
 X.push();
-X.beginShape();
+X.beginShape(form_art);
 X.strokeCap(PROJECT);
 X.strokeWeight(strichstaerke);
 X.vertex(Versal_vbn_minimal + (strichstaerke / 2) + Versal_vbn_minimal, H_linie);
 X.vertex(Versal_vbn_minimal + E_schriftbild_6 - (strichstaerke / 2) -  Versal_vbn_minimal, grundlinie);
 X.endShape();
-X.beginShape();
+X.beginShape(form_art);
 X.vertex(Versal_vbn_minimal + E_schriftbild_6 - (strichstaerke / 2) - Versal_vbn_minimal, H_linie);
 X.vertex(Versal_vbn_minimal + (strichstaerke / 2) +  Versal_vbn_minimal, grundlinie);
 X.endShape();
@@ -1302,14 +1326,14 @@ X.rect(0, grundlinie, (2 * Versal_vbn_minimal) + E_schriftbild_6, (schriftgrad *
 X.pop();
 // Y 4,minimal
 Y.push();
-Y.beginShape();
+Y.beginShape(form_art);
 Y.strokeWeight(strichstaerke);
 Y.strokeCap(PROJECT);
 Y.vertex(Versal_vbn_minimal + (strichstaerke / 2) + Versal_vbn_minimal, H_linie);
 Y.vertex(Versal_vbn_minimal + (E_schriftbild_6 / 2) , versalien_hilfslinie_1);
 Y.vertex(Versal_vbn_minimal + E_schriftbild_6 - Versal_vbn_minimal - (strichstaerke / 2), H_linie);
 Y.endShape();
-Y.beginShape();
+Y.beginShape(form_art);
 Y.vertex(Versal_vbn_minimal + (E_schriftbild_6 / 2), versalien_hilfslinie_1);
 Y.vertex(Versal_vbn_minimal + (E_schriftbild_6 / 2), grundlinie);
 Y.endShape();
@@ -1322,7 +1346,7 @@ Y.rect(0, grundlinie, (2 * Versal_vbn_minimal) + E_schriftbild_6, (schriftgrad *
 Y.pop();
 // Z E_schriftbild_3 +(2 * H_vnb_halbiert)
 Z.push();
-Z.beginShape();
+Z.beginShape(form_art);
 Z.strokeWeight(strichstaerke);
 Z.strokeCap(SQUARE);
 Z.strokeJoin(ROUND);
