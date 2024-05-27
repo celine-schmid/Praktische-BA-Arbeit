@@ -914,6 +914,7 @@ body .container-2 {
     color: var(--main-bg-color);
 }
 
+
 .farbe-3-rahmen {
     border-color: rgb(246, 255, 0);
     background-color: var(--main-font-color);
@@ -925,6 +926,11 @@ body .container-2 {
     background-color: var(--main-font-color);
     color: var(--main-bg-color);
 }
+.farbe-3-rahmen-btn.filled {
+    background-color:rgb(246, 255, 0);
+    color: var(--main-bg-color);
+}
+
 
 .farbe-3-rahmen-btn:hover {
     background-color: rgb(246, 255, 0);
@@ -956,6 +962,11 @@ body .container-2 {
     background-color: var(--main-font-color);
     color: var(--main-bg-color);
 }
+.farbe-4-rahmen-btn.filled {
+    background-color:rgb(233, 61, 104);
+    color: var(--main-bg-color);
+}
+
 
 .farbe-4-rahmen-btn:hover {
     background-color: rgb(233, 61, 104);
@@ -984,6 +995,11 @@ body .container-2 {
 .farbe-5-rahmen-btn {
     border-color: rgb(102, 102, 239);
     background-color: var(--main-font-color);
+    color: var(--main-bg-color);
+}
+
+.farbe-5-rahmen-btn.filled {
+    background-color:rgb(102, 102, 239);
     color: var(--main-bg-color);
 }
 
@@ -1016,7 +1032,10 @@ body .container-2 {
     background-color: var(--main-font-color);
     color: var(--main-bg-color);
 }
-
+.farbe-6-rahmen-btn.filled {
+    background-color:rgb(231, 118, 69);
+    color: var(--main-bg-color);
+}
 .farbe-6-rahmen-btn:hover {
     background-color: rgb(231, 118, 69);
 }
