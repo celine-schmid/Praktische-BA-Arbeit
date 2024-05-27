@@ -39,6 +39,17 @@ function filterSelection(c) {
         w3RemoveClass(x[i], "show");
         if (x[i].className.indexOf(c) > -1) w3AddClass(x[i], "show");
     }
+
+    // loop through all the buttons and add the active class to the current/clicked button
+    let nav = document.getElementsByClassName('btn');
+    for(i = 0; i < nav.length; i++) {
+        if(nav[i].classList.contains('filled')) {
+            nav[i].classList.remove('filled');
+        }
+        if(nav[i].innerHTML.toLowerCase().includes(c)) {
+            nav[i].classList.add('filled');
+        }
+    }
 }
 
 // Show filtered elements
@@ -52,10 +63,10 @@ function w3AddClass(element, name) {
         }
     }
 
-    var container = document.getElementById('masonry-container');
+    var $container = $('masonry-container');
     // init with element
     var grid = document.querySelector('.grid');
-    container.imagesLoaded(function () {
+    $container.imagesLoaded(function () {
         var msnry = new Masonry(grid, {
             // options...
             itemSelector: '.grid-item',
