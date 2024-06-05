@@ -7,7 +7,7 @@ let strichstaerke = 30;
 let strichstaerke_waagerecht = strichstaerke * 0.8;
 let strichstaerke_fein = 2;
 
-let noiseOffset = 0.01;
+let noiseOffset = 2;
 
 
 // Horizontale Schriftlinien
@@ -482,7 +482,7 @@ function draw() {
 // POINTS, LINES, TRIANGLES, TRIANGLE_FAN, TRIANGLE_STRIP, QUADS, QUAD_STRIP, TESS
 let form_art = TESS; 
 
-let schritt = 0.001;
+let schritt = 1;
 
 // Horizontale Schriftlinien
 let grundlinie = schriftgrad * 0.7;
@@ -543,6 +543,8 @@ let n_vb_vergroessert = n_vb * 1.1; // Faktor muss je nach Schrift angepasst wer
 let o_vnb_vermindert = o_vnb * 0.9; // Faktor muss je nach Schrift angepasst werden.
 let Gemeine_vbn_minimal = n_vb * 0.2; // Faktor muss je nach Schrift angepasst werden.
 let Gemeine_vbn_augenmass = n_vb * 0.4; // Faktor muss nach Augenmass entschieden werden.
+
+let fuellfarbe = 0;
 
 
 // Buchstabenskelette der Versalien zeichnen.
@@ -624,7 +626,7 @@ O.endShape(CLOSE);
 
 
 A.beginShape();
-A.noFill();
+A.fill(fuellfarbe);
 A.strokeCap(PROJECT);
 A.strokeJoin(BEVEL);
 A.strokeWeight(strichstaerke);
@@ -1236,7 +1238,7 @@ Y.pop();
 // }
 // H.endShape();
   
- noiseOffset += 500;  // Increment noise offset for animation effect -> spannende Zahlen; 500, 0.1, 0.01, 0.02
+ noiseOffset += 50;  // Increment noise offset for animation effect -> spannende Zahlen; 500, 0.1, 0.01, 0.02
 //////////////////////////////////////////////////////////////////////////////////////////////
  
 
@@ -1265,7 +1267,7 @@ W.beginShape(form_art);
 W.strokeJoin(BEVEL);
 W.strokeCap(PROJECT);
 W.stroke(0);
-W.fill(255);
+W.fill(fuellfarbe);
 W.strokeWeight(strichstaerke_fein);
 
   for (let t = 0; t <= 1; t += schritt) {
@@ -1290,6 +1292,7 @@ W.beginShape(form_art);
 W.strokeJoin(BEVEL);
 W.strokeCap(PROJECT);
 W.stroke(0);
+W.fill(fuellfarbe);
 W.strokeWeight(strichstaerke_fein);
 
   for (let t = 0; t <= 1; t += schritt) { //0.5
@@ -1314,6 +1317,7 @@ W.beginShape(form_art);
 W.strokeJoin(BEVEL);
 W.strokeCap(ROUND);
 W.stroke(0);
+W.fill(fuellfarbe);
 //W.fill(0);
 W.strokeWeight(strichstaerke_fein);
 
@@ -1339,7 +1343,7 @@ W.beginShape(form_art);
 W.strokeJoin(BEVEL);
 W.strokeCap(PROJECT);
 W.stroke(0);
-W.fill(255);
+W.fill(fuellfarbe);
 W.strokeWeight(strichstaerke_fein);
 
   for (let t = 0; t <= 1; t += schritt) {
@@ -1449,7 +1453,7 @@ I.beginShape(form_art);
 I.strokeJoin(BEVEL);
 I.strokeCap(PROJECT);
 I.stroke(0);
-I.fill(255);
+I.fill(fuellfarbe);
 I.strokeWeight(strichstaerke_fein);
 
   for (let t = 0; t <= 1; t += schritt) {
@@ -1495,7 +1499,7 @@ L.beginShape(form_art);
 L.strokeJoin(BEVEL);
 L.strokeCap(PROJECT);
 L.stroke(0);
-L.fill(255);
+L.fill(fuellfarbe);
 L.strokeWeight(strichstaerke_fein);
 
   for (let t = 0; t <= 1; t += schritt) {
@@ -1518,7 +1522,7 @@ L.beginShape(form_art);
 L.strokeJoin(BEVEL);
 L.strokeCap(PROJECT);
 L.stroke(0);
-L.fill(255);
+L.fill(fuellfarbe);
 L.strokeWeight(strichstaerke_fein);
 
   for (let t = 0; t <= 1; t += schritt) {
@@ -1571,7 +1575,7 @@ D.beginShape(form_art);
 D.strokeJoin(BEVEL);
 D.strokeCap(PROJECT);
 D.stroke(0);
-D.fill(255);
+D.fill(fuellfarbe);
 D.strokeWeight(strichstaerke_fein);
 
   for (let t = 0; t <= 1; t += schritt) {
@@ -1600,7 +1604,7 @@ D.beginShape(form_art);
 D.strokeJoin(BEVEL);
 D.strokeCap(PROJECT);
 D.stroke(0);
-D.fill(255);
+D.fill(fuellfarbe);
 D.strokeWeight(strichstaerke_fein);
 
   for (let t = 0; t <= 1; t += schritt) {
@@ -1629,7 +1633,7 @@ D.beginShape(form_art);
 D.strokeJoin(BEVEL);
 D.strokeCap(PROJECT);
 D.stroke(0);
-D.fill(255);
+D.fill(fuellfarbe);
 D.strokeWeight(strichstaerke_fein);
 
   for (let t = 0; t <= 1; t += schritt) {
@@ -1647,7 +1651,7 @@ D.pop();
 // U
 U.push();
 U.noStroke();
-U.fill(buchstaben_hintergrund);
+U.fill(fuellfarbe);
 // D.rect(0, 0, H_vnb, schriftgrad * 0.95);
 U.pop();
 let U_4_x1 = H_vnb ;
@@ -1659,7 +1663,7 @@ U.beginShape(form_art);
 U.strokeJoin(BEVEL);
 U.strokeCap(PROJECT);
 U.stroke(0);
-U.fill(255);
+U.fill(fuellfarbe);
 U.strokeWeight(strichstaerke_fein);
 
   for (let t = 0; t <= 1; t += schritt) {
@@ -1688,7 +1692,7 @@ U.beginShape(form_art);
 U.strokeJoin(BEVEL);
 U.strokeCap(PROJECT);
 U.stroke(0);
-U.fill(255);
+U.fill(fuellfarbe);
 U.strokeWeight(strichstaerke_fein);
 
   for (let t = 0; t <= 1; t += schritt) {
@@ -1717,7 +1721,7 @@ U.beginShape(form_art);
 U.strokeJoin(BEVEL);
 U.strokeCap(PROJECT);
 U.stroke(0);
-U.fill(255);
+U.fill(fuellfarbe);
 U.strokeWeight(strichstaerke_fein);
 
   for (let t = 0; t <= 1; t += schritt) {
@@ -1748,7 +1752,7 @@ C.beginShape(form_art);
 C.strokeJoin(BEVEL);
 C.strokeCap(PROJECT);
 C.stroke(0);
-C.fill(255);
+C.fill(fuellfarbe);
 C.strokeWeight(strichstaerke_fein);
 
   for (let t = 0; t <= 1; t += schritt) {
@@ -1765,7 +1769,7 @@ C.pop();
 
 C.push();
 C.noStroke();
-C.fill(buchstaben_hintergrund);
+C.fill(fuellfarbe);
 // D.rect(0, 0, H_vnb, schriftgrad * 0.95);
 C.pop();
 let C2_4_x1 = O_vnb+40 ;
@@ -1777,7 +1781,7 @@ C.beginShape(form_art);
 C.strokeJoin(BEVEL);
 C.strokeCap(PROJECT);
 C.stroke(0);
-C.fill(255);
+C.fill(fuellfarbe);
 C.strokeWeight(strichstaerke_fein);
 
   for (let t = 0; t <= 1; t += schritt) {
@@ -1807,7 +1811,7 @@ H.beginShape(form_art);
 H.strokeJoin(BEVEL);
 H.strokeCap(PROJECT);
 H.stroke(0);
-H.fill(255);
+H.fill(fuellfarbe);
 H.strokeWeight(strichstaerke_fein);
 
   for (let t = 0; t <= 1; t += schritt) {
@@ -1824,7 +1828,7 @@ H.pop();
 
 H.push();
 H.noStroke();
-H.fill(buchstaben_hintergrund);
+H.fill(fuellfarbe);
 // D.rect(0, 0, H_vnb, schriftgrad * 0.95);
 H.pop();
 let H2_4_x1 = H_vnb + E_schriftbild_3;
@@ -1836,7 +1840,7 @@ H.beginShape(form_art);
 H.strokeJoin(BEVEL);
 H.strokeCap(PROJECT);
 H.stroke(0);
-H.fill(255);
+H.fill(fuellfarbe);
 H.strokeWeight(strichstaerke_fein);
 
   for (let t = 0; t <= 1; t += schritt) {
@@ -1853,7 +1857,7 @@ H.pop();
 
 H.push();
 H.noStroke();
-H.fill(buchstaben_hintergrund);
+H.fill(fuellfarbe);
 // D.rect(0, 0, H_vnb, schriftgrad * 0.95);
 H.pop();
 let H3_4_x1 = H_vnb ;
@@ -1865,7 +1869,7 @@ H.beginShape(form_art);
 H.strokeJoin(BEVEL);
 H.strokeCap(PROJECT);
 H.stroke(0);
-H.fill(255);
+H.fill(fuellfarbe);
 H.strokeWeight(strichstaerke_fein);
 
   for (let t = 0; t <= 1; t += schritt) {
@@ -1884,7 +1888,7 @@ H.pop();
 // E_schriftbild_7 + (2 * Versal_vbn_augenmass)
 S.push();
 S.noStroke();
-S.fill(buchstaben_hintergrund);
+S.fill(fuellfarbe);
 // D.rect(0, 0, H_vnb, schriftgrad * 0.95);
 S.pop();
 let S_4_x1 = Versal_vbn_augenmass + E_schriftbild_7 ;
@@ -1896,7 +1900,7 @@ S.beginShape(form_art);
 S.strokeJoin(BEVEL);
 S.strokeCap(PROJECT);
 S.stroke(0);
-S.fill(255);
+S.fill(fuellfarbe);
 S.strokeWeight(strichstaerke_fein);
 
   for (let t = 0; t <= 1; t += schritt) {
@@ -1913,7 +1917,7 @@ S.pop();
 
 S.push();
 S.noStroke();
-S.fill(buchstaben_hintergrund);
+S.fill(fuellfarbe);
 // D.rect(0, 0, H_vnb, schriftgrad * 0.95);
 S.pop();
 let S2_4_x1 = Versal_vbn_augenmass +40 ;
@@ -1925,7 +1929,7 @@ S.beginShape(form_art);
 S.strokeJoin(BEVEL);
 S.strokeCap(PROJECT);
 S.stroke(0);
-S.fill(255);
+S.fill(fuellfarbe);
 S.strokeWeight(strichstaerke_fein);
 
   for (let t = 0; t <= 1; t += schritt) {
@@ -1942,7 +1946,7 @@ S.pop();
 
 S.push();
 S.noStroke();
-S.fill(buchstaben_hintergrund);
+S.fill(fuellfarbe);
 // D.rect(0, 0, H_vnb, schriftgrad * 0.95);
 S.pop();
 let S3_4_x1 = Versal_vbn_augenmass + E_schriftbild_7 ;
@@ -1954,7 +1958,7 @@ S.beginShape(form_art);
 S.strokeJoin(BEVEL);
 S.strokeCap(PROJECT);
 S.stroke(0);
-S.fill(255);
+S.fill(fuellfarbe);
 S.strokeWeight(strichstaerke_fein);
 
   for (let t = 0; t <= 1; t += schritt) {
@@ -1984,7 +1988,7 @@ E.beginShape(form_art);
 E.strokeJoin(BEVEL);
 E.strokeCap(PROJECT);
 E.stroke(0);
-E.fill(255);
+E.fill(fuellfarbe);
 E.strokeWeight(strichstaerke_fein);
 
   for (let t = 0; t <= 1; t += schritt) {
@@ -2000,7 +2004,7 @@ E.endShape();
 E.pop();
 E.push();
 E.noStroke();
-E.fill(buchstaben_hintergrund);
+E.fill(fuellfarbe);
 // D.rect(0, 0, H_vnb, schriftgrad * 0.95);
 E.pop();
 let E2_x1 = H_vnb ;
@@ -2012,7 +2016,7 @@ E.beginShape(form_art);
 E.strokeJoin(BEVEL);
 E.strokeCap(PROJECT);
 E.stroke(0);
-E.fill(255);
+E.fill(fuellfarbe);
 E.strokeWeight(strichstaerke_fein);
 
   for (let t = 0; t <= 1; t += schritt) {
@@ -2028,7 +2032,7 @@ E.endShape();
 E.pop();
 E.push();
 E.noStroke();
-E.fill(buchstaben_hintergrund);
+E.fill(fuellfarbe);
 // D.rect(0, 0, H_vnb, schriftgrad * 0.95);
 E.pop();
 let E3_x1 = H_vnb ;
@@ -2040,7 +2044,7 @@ E.beginShape(form_art);
 E.strokeJoin(BEVEL);
 E.strokeCap(PROJECT);
 E.stroke(0);
-E.fill(255);
+E.fill(fuellfarbe);
 E.strokeWeight(strichstaerke_fein);
 
   for (let t = 0; t <= 1; t += schritt) {
@@ -2056,7 +2060,7 @@ E.endShape();
 E.pop();
 E.push();
 E.noStroke();
-E.fill(buchstaben_hintergrund);
+E.fill(fuellfarbe);
 // D.rect(0, 0, H_vnb, schriftgrad * 0.95);
 E.pop();
 let E4_x1 = H_vnb ;
@@ -2068,7 +2072,7 @@ E.beginShape(form_art);
 E.strokeJoin(BEVEL);
 E.strokeCap(PROJECT);
 E.stroke(0);
-E.fill(255);
+E.fill(fuellfarbe);
 E.strokeWeight(strichstaerke_fein);
 
   for (let t = 0; t <= 1; t += schritt) {
@@ -2093,7 +2097,7 @@ K.beginShape(form_art);
 K.strokeJoin(BEVEL);
 K.strokeCap(PROJECT);
 K.stroke(0);
-K.fill(255);
+K.fill(fuellfarbe);
 K.strokeWeight(strichstaerke_fein);
 
   for (let t = 0; t <= 1; t += schritt) {
@@ -2512,7 +2516,7 @@ function keyTyped() {
         x_startwert += schriftgrad * 0.7; 
     } else if (key === 'D') {
         drawNextLetter(D, x_startwert, y_startwert);
-         x_startwert += schriftgrad * 0.62; 
+         x_startwert += schriftgrad * 0.55; 
         //x_startwert += schriftgrad * 0.35; 
     } else if (key === 'E') {
         drawNextLetter(E, x_startwert, y_startwert);
@@ -2568,7 +2572,7 @@ function keyTyped() {
         x_startwert += schriftgrad * 0.491; 
     } else if (key === 'U') {
         drawNextLetter(U, x_startwert, y_startwert);
-        x_startwert += schriftgrad * 0.6; 
+        x_startwert += schriftgrad * 0.5; 
         //x_startwert += schriftgrad * 0.45; 
     } else if (key === 'V') {
         drawNextLetter(V, x_startwert, y_startwert);
