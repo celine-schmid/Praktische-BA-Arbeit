@@ -788,7 +788,7 @@ body .container-2 {
 }
 
 .grid-item {
-    width: 30.5rem;
+    width: 30rem;
     height: auto;
     padding-bottom: 24px !important;
     max-width: calc(100vw - 48px);
