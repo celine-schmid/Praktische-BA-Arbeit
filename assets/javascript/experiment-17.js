@@ -272,7 +272,8 @@
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 // Neustart
 function setup() {
-  createCanvas(windowWidth, windowHeight);
+  createCanvas(windowWidth*2, windowHeight);
+  scale(0.5);
   colorMode(HSB);
   angleMode(DEGREES);
   blendMode(DIFFERENCE);
@@ -374,6 +375,8 @@ stroke('black');
   strokeWeight(2);
   push();
   translate(-65,0);
+  scale(0.5);
+  scale(0.5);
   drawRotatedHexagon(120, 100, seite, hoehe);
   drawRotatedHexagon(60, 200, seite, hoehe);
   drawRotatedHexagon(180, 200, seite, hoehe);
@@ -394,6 +397,7 @@ pop();
   //fill(270,40,80,0.4);
   //noFill();
   //stroke(270,40,80,0.4);
+  scale(0.5);
   push();
   translate(115,0);
   drawRotatedHexagon(240, 100, seite, hoehe);
@@ -544,6 +548,7 @@ let rotationCompleted = false;
 
 function drawRotatedHexagon(centerX, centerY, seite, hoehe) {
   push();
+  scale(0.5);
   translate(centerX, centerY); // Move origin to the center of the hexagon
   if (!rotationCompleted) {
     let rotationAngle = frameCount % 360; // Ensure rotation stops after one full rotation
@@ -588,6 +593,7 @@ function drawRotatedTriangle(centerX, centerY, seite, hoehe) {
     push();
     translate(centerX, centerY); // Move origin to the center of the triangle
     rotate(-30);
+    scale(0.5);
     if (!rotationCompletedTG) {
         let rotationAngle = frameCount % 360; // Ensure rotation stops after one full rotation
         rotate(rotationAngle); // Rotate the hexagon based on frameCount

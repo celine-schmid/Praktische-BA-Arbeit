@@ -48,7 +48,7 @@ function draw() {
   imageMode(CENTER);
 
   // margin border
-  translate(windowWidth/2.6, windowHeight/1.5);
+  translate(windowWidth/3, windowHeight/1.6);
 
   if (textTyped.length > 0 && font != undefined) {
     // get a path from OpenType.js

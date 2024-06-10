@@ -115,7 +115,7 @@ function draw() {
 
 // Funktion zum Abrufen der Punkte des Buchstabens aus der Schriftart
 function getPoints() {
-  fontPath = font.getPath(typedKey, windowWidth/3, windowHeight/2.5, 500); // Erstellt einen Pfad für den eingegebenen Buchstaben
+  fontPath = font.getPath(typedKey, windowWidth/25, windowHeight/2, 1000); // Erstellt einen Pfad für den eingegebenen Buchstaben
   var path = new g.Path(fontPath.commands); // Erstellt ein g.Path-Objekt aus dem Pfad
   path = g.resampleByLength(path, 10); // Resampling des Pfads mit equidistanten Punkten
   textW = path.bounds().width; // Berechnet die Breite des Textes

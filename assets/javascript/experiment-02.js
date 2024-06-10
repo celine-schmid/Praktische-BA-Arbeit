@@ -49,7 +49,7 @@ function draw() {
     if (!font) return;
 
     // margin border
-   translate(-windowWidth/8, windowHeight/3.8);
+   translate(-windowWidth/4, windowHeight/6);
 
     if (textTyped.length > 0) {
         // get a path from OpenType.js

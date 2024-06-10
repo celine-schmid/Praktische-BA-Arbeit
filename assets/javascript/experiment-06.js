@@ -70,10 +70,10 @@ function draw() {
 
     // Linien: Verbunden mit geraden Linien
     strokeWeight(0.1); // Strichstärke
-    stroke(150); // Strichfarbe
+    stroke(400); // Strichfarbe
     beginShape(); // Beginnt eine neue Form
     for (var i = 0; i < pnts.length; i++) {
-      vertex(pnts[i].x, pnts[i].y); // Fügt einen Scheitelpunkt hinzu
+     // vertex(pnts[i].x, pnts[i].y); // Fügt einen Scheitelpunkt hinzu
       ellipse(pnts[i].x, pnts[i].y, 7, 7); // Zeichnet einen Punkt
     }
     vertex(pnts[0].x, pnts[0].y); // Verbindet den letzten Punkt mit dem ersten Punkt, um die Form zu schließen
@@ -103,7 +103,8 @@ function draw() {
 
 // Funktion zum Abrufen der Punkte des Buchstabens aus der Schriftart
 function getPoints() {
-  fontPath = font.getPath(typedKey, windowWidth/3, windowHeight/13, 500); // Erstellt einen Pfad für den eingegebenen Buchstaben
+  fontPath = font.getPath(typedKey, windowWidth/5, windowHeight/4, 1000
+  ); // Erstellt einen Pfad für den eingegebenen Buchstaben
   var path = new g.Path(fontPath.commands); // Erstellt ein g.Path-Objekt aus dem Pfad
   path = g.resampleByLength(path, 25); // Resampling des Pfads mit equidistanten Punkten
   textW = path.bounds().width; // Berechnet die Breite des Textes

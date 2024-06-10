@@ -14,6 +14,8 @@ function setup() {
     background('#000');
     let drehgeschwindigkeit = frameCount;
   
+    translate(200,-50);
+
     let x = 0;
     let y = -300;
     let z = 0;
