@@ -354,7 +354,7 @@ a:active {
     margin-left: 12px;
     margin-right: 12px;
     position: -webkit-sticky;
-    background-color: rgba(255, 255, 255, 0.255);
+    background-color: rgba(255, 255, 255, 0.533);
 }
 
 div.sticky {
