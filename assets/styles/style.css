@@ -360,7 +360,8 @@ a:active {
 div.sticky {
     top: 0px;
     background-color: rgba(41, 41, 41, 0.255);
-    backdrop-filter: blur(30px);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
     width: 100%;
     z-index: 1;
     box-sizing: border-box;
