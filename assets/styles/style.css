@@ -118,6 +118,7 @@ nav {
     width: 100%;
     z-index: 1;
     box-sizing: border-box;
+    position: sticky;
 }
 
 br {text-decoration: none;}
@@ -125,6 +126,7 @@ br {text-decoration: none;}
 .navbar {
     padding: 0px;
     width: 100%;
+    position: sticky;
 }
 
 .navbar_spacer {
@@ -145,6 +147,7 @@ br {text-decoration: none;}
     width: 100%;
     display: flex;
     justify-content: space-between;
+    position: sticky;
 }
 
 body {
