@@ -119,6 +119,8 @@ nav {
     box-sizing: border-box;
 }
 
+br {text-decoration: none;}
+
 .navbar {
     padding: 0px;
     width: 100%;
