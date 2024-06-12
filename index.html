@@ -1430,7 +1430,7 @@
                         <ul class="card-text">
                             <li>Buchstaben werden auf eigene Canvas gezeichnet und anschliessend mit der dazugehörigen Taste der Tastatur verknüpft. &#10132 Bietet mehr Flexibilität, als wenn die Buchstaben an eine feste Stelle programmiert werden.<br> </li>
                             <li>In p5.js wird dafür createGraphics() verwendet.<br></li>
-                            <li>Die Breite eines Buchstaben-Canvas ergibt sich aus der Vor- und Nachbreite sowie der Buchstabenbreite.<br></li>
+                            <!-- <li>Die Breite eines Buchstaben-Canvas ergibt sich aus der Vor- und Nachbreite sowie der Buchstabenbreite.<br></li> -->
                                            </ul>
                         <!-- <a href="experiment-19.html">
                             <button class="text-box-button">Experiment ansehen</button>
@@ -1449,7 +1449,7 @@
                     <div class="textbox-invisible ">
                         <h6 class="card-title-3">20.05.24</h6>
                         <ul class="card-text">
-                            <li>Schriftlinien in Programmcode ausdrücken<br> </li>
+                            <li>Schriftlinien in Programmcode ausdrücken &#10132 ermöglicht es schneller die Grundform der Buchstaben zu programmieren<br> </li>
                             <li>Dickte bzw. Vorbreite, Nachbreite und Schriftbild definieren<br> </li>
                                            </ul>
                         <!-- <a href="experiment-20.html">
@@ -1468,7 +1468,14 @@
                     <div class="img-container"><img src="assets/images/experiment-21-2.png"></div>
                     <div class="textbox-invisible ">
                         <h6 class="card-title-3">21.05.24</h6>
-                      
+                        <ul class="card-text">
+                            <li>Die in Experiment 20 definierten Buchstabenformen werden in diesem Experiment manipuliert.<br> </li>
+                            <li>Der Code zeichnet die Buchstaben mithilfe einer Serie von 
+                                Formen, die mittels einer Schleife gleich- mässig zwischen den Start- und Endpunkten der einzelnen Buchstabensegmente verteilt werden. Dies wird als 
+                                Interpolieren (LERP) bezeichnet. Die interpolierten Punkte werden durch 
+                                eine Rauschfunktion (NOISE) nach links und rechts (x-Koordinaten) sowie nach oben 
+                                und unten (y-Koordinaten) verschoben. <br> </li>
+                                           </ul>
                         <!-- <a href="experiment-21.html">
                             <button class="text-box-button">Experiment ansehen</button>
                         </a> -->
@@ -1482,10 +1489,17 @@
                         <div class="card-text "><button class="btn_title farbe-3-titel" onclick="myFunction2();ShowHideAboutBtn();ShowHideButtons()">Experiment 22</button>
                         </div>
                     </div>
-                    <!-- <div class="img-container"><img src="assets/images/experiment-21.png"></div> -->
+                    <div class="img-container"><img src="assets/images/Bildschirmfoto 2024-05-22 um 11.45.21.png"></div>
                     <div class="textbox-invisible ">
                         <h6 class="card-title-3">22.05.24</h6>
-                      
+                        <ul class="card-text">
+                            <!-- &#10132 -->
+                            <li>Die Funktionen beginShape() und endShape() können durch einen Parameter ergänzt werden, welcher die Art der zu erstellenden Form festlegt.
+                                Standardmässig kann jedes unregelmässige Polygon gezeichnet werden. Die verfügbaren Parameter lauten: POINTS, TRIANGLES, TRIANGLE_FAN, TRIANGLE_STRIP, QUADS, QUAD_STRIP und TESS. <br></li>
+                                 <li>Durch unterschiedliche Linienstärken und 
+                                    Argumente der Formfunktion sowie variierende Parameter des Rauschens und der Interpolation entstehen visuell sehr unterschiedliche Schriftbilder aus demselben Grundgerüst. <br> </li>
+                          
+                         </ul>
                         <!-- <a href="experiment-22.html">
                             <button class="text-box-button">Experiment ansehen</button>
                         </a> -->
@@ -1502,7 +1516,11 @@
                     <div class="img-container"><img src="assets/images/experiment-23-3.png"></div>
                     <div class="textbox-invisible ">
                         <h6 class="card-title-3">22.05.24</h6>
-                      
+                        <ul class="card-text">
+                            <!-- &#10132 -->
+                                 <li> Hier wurde der Parameter TRIANGLES für die Funktion beginShape() verwendet.<br> </li>
+                                 <li> Es wurde mit Schwarz als Füllfarbe und Weiss als Konturfarbe sowie umgekehrt mit weisser Füllung und schwarzer Kontur gearbeitet.<br> </li>
+                         </ul>
                         <!-- <a href="experiment-23.html">
                             <button class="text-box-button">Experiment ansehen</button>
                         </a> -->
@@ -1519,7 +1537,11 @@
                     <div class="img-container"><img src="assets/images/experiment-24.png"></div>
                     <div class="textbox-invisible ">
                         <h6 class="card-title-3">22.05.24</h6>
-                      
+                        <ul class="card-text">
+                            <!-- &#10132 -->
+                                 <li> Bei diesem Experiment arbeitete ich mit beginShape(POINTS).<br> </li>
+                                 <li> Durch das Rauschen scheinen die Buchstabenformen zu zerfliessen.<br> </li>
+                         </ul>
                         <!-- <a href="experiment-24.html">
                             <button class="text-box-button">Experiment ansehen</button>
                         </a> -->
@@ -1556,6 +1578,7 @@
                         <li>Erste Layoutversuche mit dem Material.<br> </li>
                         <li>Wie soll der Inhalt in Kapitel unterteilt werden?<br> </li>
                         <li>Welche Bildgrössen soll ich verwenden?<br> </li>
+                        <li>Wie gross muss der Bundsteg mindestens sein, damit alle Inhalte sichtbar sind?<br> </li>
                         <a href="layout-01.html">
                             <button class="text-box-button">Fotografien ansehen</button>
                         </a>
@@ -1580,6 +1603,21 @@
                         <a href="thermodruck-automation.html">
                             <button class="text-box-button">Druckprozess starten</button>
                         </a>
+                    </div>
+                </div>
+
+            </div>
+            <div class="grid-item filterDiv experimente">
+                <div class="textbox  box-shadow-3">
+                    <div class="card text-start">
+                        <div class="card-text "><button class="btn_title farbe-3-titel" onclick="myFunction2();ShowHideAboutBtn();ShowHideButtons()">Ausstellungsskizze der Werkschau</button>
+                        </div>
+                    </div>
+                    <div class="img-container"><img src="assets/images/Bildschirmfoto 2024-06-12 um 14.32.09.png"></div>
+                    <div class="textbox-invisible ">
+                        <h6 class="card-title-3">26.05.24</h6>
+
+            
                     </div>
                 </div>
 
