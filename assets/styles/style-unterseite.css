@@ -1252,3 +1252,8 @@ h6{
 .anweisung{
     position:absolute;
 }
+
+#einzelbild{
+    width: 100vw;
+    padding-right: 48px;
+}
