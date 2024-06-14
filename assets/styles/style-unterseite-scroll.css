@@ -1252,3 +1252,9 @@ h6{
 .anweisung{
     position:absolute;
 }
+
+#flattersatz {
+    text-align: left;
+    line-height: 110%;
+    font-size: x-large;
+}
