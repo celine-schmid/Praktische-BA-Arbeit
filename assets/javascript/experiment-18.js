@@ -74,6 +74,7 @@ function setup() {
   function draw() {
    background(255);
    translate(50,200);
+   
     //noLoop();
     //translate(150,0);
     //shearY(-23);
